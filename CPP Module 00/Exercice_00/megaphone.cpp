@@ -1,23 +1,20 @@
 #include <iostream>
 
-int main(int argc, char **argv)
+int main(int ac, char **av)
 {
-    int i = 1;
-    if (argc > 1)
-    {
-        while (i < argc)
-        {
-            int j = 0;
-            while (argv[i][j] != '\0')
-            {
-                argv[i][j] = toupper(argv[i][j]);
-                j++;
-            }
-            std::cout << argv[i];
-            i++;
-        }
-        std::cout << std::endl;
-    }
-    else
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	if (ac > 1)
+	{
+		for (int i = 1; i < ac; i++)
+		{
+			for (int j = 0; av[i][j]; j++)
+			{
+				if (isalpha(av[i][j]) > 0 && islower(av[i][j]) > 0)
+					av[i][j] = toupper(av[i][j]);
+				std::cout << av[i][j];
+			}
+		}
+	}
+	else
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	std::cout << std::endl;
 }
