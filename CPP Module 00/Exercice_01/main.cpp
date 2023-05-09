@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 11:41:43 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/03/06 11:38:23 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:06:10 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ int main(void)
             oldPhoneBook.addContact();
         else if (input == "SEARCH")
         {
-            do {
-                std::cout << "Enter the index of the contact (Between 1 and 8) :" << std::endl;
-                getchar(std::cin, input);
-            } while (isdigit);
-            oldPhoneBook.search(std::stoi(input));
+			
         }
         else
             std::cout << "Wrong input." << std::endl;
