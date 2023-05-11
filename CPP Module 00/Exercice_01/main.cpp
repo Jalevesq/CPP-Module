@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 11:41:43 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/11 18:58:04 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/11 19:13:43 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(void)
 {
-    Phonebook oldPhoneBook;
+    PhoneBook oldPhoneBook;
     std::string input;
     
     std::cout << "Bienvenue sur Old PhoneBook !" << std::endl;

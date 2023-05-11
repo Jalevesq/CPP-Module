@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 11:17:56 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/11 18:57:49 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/11 19:13:56 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include "Contact.class.hpp"
 
-class Phonebook {
+class PhoneBook {
     public:
-        Phonebook();
-        ~Phonebook();
+        PhoneBook();
+        ~PhoneBook();
         void    addContact(void);
         void    search(void);
     private:

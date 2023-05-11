@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 11:17:13 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/11 19:02:37 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/11 19:14:17 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 #include <sstream>
 #include "PhoneBook.class.hpp"
 
-Phonebook::Phonebook(void) {
+PhoneBook::PhoneBook(void) {
     std::cout << "Constructor Phonebook called" << std::endl;
     _contactNumber = 0;
 }
 
-Phonebook::~Phonebook(void) {
+PhoneBook::~PhoneBook(void) {
     std::cout << "Destructor Phonebook Called" << std::endl;
 }
 
-void    Phonebook::search(void) {
+void    PhoneBook::search(void) {
 
     std::string input;
     int number;
@@ -48,7 +48,7 @@ void    Phonebook::search(void) {
     std::cout << "Darkest secret: " << _contacts[number].getSecret() << std::endl;
 }
 
-void    Phonebook::addContact(void) {
+void    PhoneBook::addContact(void) {
     
     std::string info;
     
