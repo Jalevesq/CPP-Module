@@ -6,67 +6,93 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 11:17:13 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/03/06 11:10:02 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/11 19:02:37 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+#include <sstream>
 #include "PhoneBook.class.hpp"
 
 Phonebook::Phonebook(void) {
-    std::cout << "Constructor called" << std::endl;
+    std::cout << "Constructor Phonebook called" << std::endl;
     _contactNumber = 0;
 }
 
 Phonebook::~Phonebook(void) {
-    std::cout << "Destructor Called" << std::endl;
+    std::cout << "Destructor Phonebook Called" << std::endl;
 }
 
-void    Phonebook::search(int index) {
-    if (index < 1 && index > 8)
-    {
-        std::cout << "Bad Index." << std::endl;
-        return;
-    }
-    index += 1;
-    std::cout << "Name: " << _contacts[index].name << std::endl;
-    std::cout << "Last name: " << _contacts[index].lastName << std::endl;
-    std::cout << "Phone numnber: " << _contacts[index].phoneNumber << std::endl;
-    std::cout << "Nickname: " << _contacts[index].nickname << std::endl;
-    std::cout << "Darkest secret" << _contacts[index].secret << std::endl;
+void    Phonebook::search(void) {
+
+    std::string input;
+    int number;
+    std::cout << "Input an Index between 1 and 8" << std::endl;
+    do {
+        getline(std::cin, input);
+         try {
+            number = std::stoi(input);
+            if (number < 1 || number > 8)
+                std::cout << "Invalid Index. Please enter an index between 1 and 8." << std::endl;
+        }
+        catch (const std::exception& e) {
+            std::cout << "Invalid input. Please enter an integer." << std::endl;
+        }
+        } while (number < 1 || number > 8);
+    number -= 1;
+    std::cout << "Name: " << _contacts[number].getName() << std::endl;
+    std::cout << "Last name: " << _contacts[number].getLastName() << std::endl;
+    std::cout << "Nickname: " << _contacts[number].getNickname() << std::endl;
+    std::cout << "Phone numnber: " << _contacts[number].getPhoneNumber() << std::endl;
+    std::cout << "Darkest secret: " << _contacts[number].getSecret() << std::endl;
 }
 
 void    Phonebook::addContact(void) {
     
+    std::string info;
+    
+    if (_contactNumber > 7)
+        _contactNumber = 0;
     // First name
     do {
-        std::cout << "Enter the first name of the contact. The field cannot be empty." << std::endl;
-        getline(std::cin, _contacts[_contactNumber % 8].name);
-    } while (_contacts[_contactNumber % 8].name.empty());
+        std::cout << "Enter the first name of the contact. This field cannot be empty." << std::endl;
+        getline(std::cin, info);
+    } while (info.empty());
+    _contacts[_contactNumber].setName(info);
+    info = "";
 
     // Last name
     do {
-        std::cout << "Enter the last name of the contact. The field cannot be empty." << std::endl;
-        getline(std::cin, _contacts[_contactNumber % 8].lastName);
-    } while (_contacts[_contactNumber % 8].lastName.empty());
-    
+        std::cout << "Enter the last name of the contact. This field cannot be empty." << std::endl;
+        getline(std::cin, info);
+    } while (info.empty());
+    _contacts[_contactNumber].setLastName(info);
+    info = "";
+
     // Nickname
     do {
-        std::cout << "Enter the phone number of the contact. The field cannot be empty." << std::endl;
-        getline(std::cin, _contacts[_contactNumber % 8].phoneNumber);
-    } while (_contacts[_contactNumber % 8].phoneNumber.empty());
+        std::cout << "Enter the nickname of the contact. This field cannot be empty." << std::endl;
+        getline(std::cin, info);
+    } while (info.empty());
+    _contacts[_contactNumber].setNickname(info);
+    info = "";
     
     // Phone Number
     do {
-        std::cout << "Enter the nickname of the contact. The field cannot be empty." << std::endl;
-        getline(std::cin, _contacts[_contactNumber % 8].nickname);
-    } while (_contacts[_contactNumber % 8].nickname.empty());
+        std::cout << "Enter the Phone Number of the contact. This field cannot be empty." << std::endl;
+        getline(std::cin, info);
+    } while (info.empty());
+    _contacts[_contactNumber].setPhoneNumber(info);
+    info = "";
     
     // Secret
     do {
-        std::cout << "Enter the darkest secret of the contact. The field cannot be empty." << std::endl;
-        getline(std::cin, _contacts[_contactNumber % 8].secret);
-    } while (_contacts[_contactNumber % 8].secret.empty());
+        std::cout << "Enter the darkest secret of the contact. This field cannot be empty." << std::endl;
+        getline(std::cin, info);
+    } while (info.empty());
+    _contacts[_contactNumber].setSecret(info);
+    info = "";
     
     std::cout << "Contact enregistré !\nVous êtes de retour au menu principal." << std::endl;
     _contactNumber++;

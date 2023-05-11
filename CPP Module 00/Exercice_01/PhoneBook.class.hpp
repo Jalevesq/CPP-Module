@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 11:17:56 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/03/06 10:54:23 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:57:49 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Phonebook {
         Phonebook();
         ~Phonebook();
         void    addContact(void);
-        void    search(int index);
+        void    search(void);
     private:
         Contact _contacts[8];
         int _contactNumber;
