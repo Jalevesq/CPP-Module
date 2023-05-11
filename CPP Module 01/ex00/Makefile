@@ -6,11 +6,11 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/11 19:12:38 by jalevesq          #+#    #+#              #
-#    Updated: 2023/05/11 19:12:43 by jalevesq         ###   ########.fr        #
+#    Updated: 2023/05/11 19:17:03 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= zombie
+NAME	= BraiiiiiiinnnzzzZ
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 CC = c++
 
