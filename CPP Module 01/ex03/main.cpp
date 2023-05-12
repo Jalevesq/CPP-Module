@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 19:53:42 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/12 17:59:47 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/05/12 17:43:25 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/05/12 18:42:21 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-# include <iostream>
+int main(void)
+{
+    // Difference entre ces 2 facons ?
+    // Weapon club("crude spiked club");
+    Weapon club = Weapon("crude spiked club");
 
-class Zombie {
-    public:
-        Zombie();
-        Zombie(std::string name);
-        ~Zombie();
-        void    announce( void );
-        void    setName(std::string name);
-    private:
-        std::string _name;
-};
-
-Zombie* zombieHorde( int N, std::string name );
-
-#endif
+    HumanA Bob("Bob", club);
+    Bob.attack();
+    // not working bc did not chance the weapon of HumanA
+    club.setType("some other type of club");
+    Bob.attack();
+}

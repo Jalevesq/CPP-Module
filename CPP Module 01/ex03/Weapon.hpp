@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 19:53:42 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/12 17:59:47 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/05/12 17:44:00 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/05/12 18:33:15 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-# include <iostream>
+#include <iostream>
 
-class Zombie {
+class Weapon {
     public:
-        Zombie();
-        Zombie(std::string name);
-        ~Zombie();
-        void    announce( void );
-        void    setName(std::string name);
+        Weapon(std::string weapon);
+        Weapon();
+        ~Weapon();
+        const std::string&  getType();
+        void    setType(std::string type);
     private:
-        std::string _name;
+        std::string _type;
 };
-
-Zombie* zombieHorde( int N, std::string name );
 
 #endif
