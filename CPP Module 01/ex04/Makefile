@@ -6,11 +6,11 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/13 10:54:07 by jalevesq          #+#    #+#              #
-#    Updated: 2023/05/13 10:54:12 by jalevesq         ###   ########.fr        #
+#    Updated: 2023/05/13 16:00:11 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= sed
+NAME	= sedproject
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 CC = c++
 
