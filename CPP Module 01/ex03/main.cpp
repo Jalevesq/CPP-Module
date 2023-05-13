@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:43:25 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/12 22:39:03 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/13 10:37:00 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,21 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int main(void)
+int main()
 {
-    // Difference entre ces 2 facons ?
-    // Weapon club("crude spiked club");
-    Weapon club = Weapon("crude spiked club");
-
-    HumanA Bob("Bob", club);
-    Bob.attack();
-    // not working bc did not chance the weapon of HumanA
-    club.setType("some other type of club");
-    Bob.attack();
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }    
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
 }

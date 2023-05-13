@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:44:00 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/12 18:33:15 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/13 10:00:24 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Weapon {
     public:
-        Weapon(std::string weapon);
+        Weapon(const std::string weapon);
         Weapon();
         ~Weapon();
         const std::string&  getType();
