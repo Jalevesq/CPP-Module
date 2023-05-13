@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 11:17:13 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/11 19:14:17 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/13 09:08:04 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void    PhoneBook::search(void) {
     do {
         getline(std::cin, input);
          try {
+            // can't use stoi. is in c++11 not 98
             number = std::stoi(input);
             if (number < 1 || number > 8)
                 std::cout << "Invalid Index. Please enter an index between 1 and 8." << std::endl;

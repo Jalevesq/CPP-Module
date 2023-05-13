@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:45:54 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/12 18:39:15 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/12 22:40:52 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class HumanA {
     public:
         ~HumanA();
-        HumanA(std::string name, Weapon& weapon);
+        HumanA(std::string name, Weapon weapon);
         void    attack();
     private:
         HumanA();
