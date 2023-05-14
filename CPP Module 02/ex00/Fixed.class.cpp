@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 19:53:42 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/12 17:59:47 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/05/14 09:46:44 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/05/14 09:54:54 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Fixed.hpp"
 
-# include <iostream>
+// Constructeur de recopie ? C'est quoi ?
 
-class Zombie {
-    public:
-        Zombie();
-        Zombie(std::string name);
-        ~Zombie();
-        void    announce( void );
-        void    setName(std::string name);
-    private:
-        std::string _name;
-};
+Fixed::Fixed() {
+    std::cout << "Default constructor called" << std::endl;
+    _number = 0;
+}
 
-Zombie* zombieHorde( int N, std::string name );
-
-#endif
+Fixed::~Fixed()
+{
+    std::cout << "Destructor called" << std::endl;
+}

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 19:52:45 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/14 18:20:28 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/05/13 22:14:55 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/05/14 18:16:40 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.class.hpp"
+#ifndef HARL_CLASS_HPP
+# define HARL_CLASS_HPP
 
-int main(void)
-{
-    int n = 5;
-    std::string name = "Ethan";
+#include <iostream>
 
-    // Je vais creer N zombie avec le nom NAME.
-    Zombie *zombie = zombieHorde(n, name);
+class Harl {
+    public:
+        Harl();
+        ~Harl();
+        void complain( std::string level );
+    private:
+        void debug ( void );
+        void info ( void );
+        void warning ( void );
+        void error ( void );
+};
 
-    // Chaque Zombie va "s'annoncer" avec son prenom
-    for (int i = 0; i < n; i++)
-        zombie[i].announce();
-
-    // Je delete tout les Zombies car cree avec New.
-    delete[] zombie;
-    return (0);
-}
+#endif

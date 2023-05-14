@@ -6,13 +6,13 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:43:25 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/13 14:55:25 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:19:36 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+# include "Weapon.class.hpp"
+#include "HumanA.class.hpp"
+#include "HumanB.class.hpp"
 
 int main()
 {

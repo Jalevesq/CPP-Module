@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 19:52:45 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/14 18:20:28 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/05/11 19:53:42 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/05/14 18:20:13 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.class.hpp"
+#ifndef ZOMBIE_CLASS_HPP
+# define ZOMBIE_CLASS_HPP
 
-int main(void)
-{
-    int n = 5;
-    std::string name = "Ethan";
+# include <iostream>
 
-    // Je vais creer N zombie avec le nom NAME.
-    Zombie *zombie = zombieHorde(n, name);
+class Zombie {
+    public:
+        Zombie();
+        Zombie(std::string name);
+        ~Zombie();
+        void    announce( void );
+        void    setName(std::string name);
+    private:
+        std::string _name;
+};
 
-    // Chaque Zombie va "s'annoncer" avec son prenom
-    for (int i = 0; i < n; i++)
-        zombie[i].announce();
+Zombie* zombieHorde( int N, std::string name );
 
-    // Je delete tout les Zombies car cree avec New.
-    delete[] zombie;
-    return (0);
-}
+#endif

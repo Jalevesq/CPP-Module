@@ -6,12 +6,12 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 19:21:57 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/11 19:55:53 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:21:08 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Zombie.hpp"
+#include "Zombie.class.hpp"
 
 int main(void)
 {

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:45:54 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/13 10:04:04 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:18:52 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#ifndef HUMANA_CLASS_HPP
+# define HUMANA_CLASS_HPP
 
-#include "Weapon.hpp"
-#include <iostream>
+# include "Weapon.class.hpp"
+# include <iostream>
 
 class HumanA {
     public:

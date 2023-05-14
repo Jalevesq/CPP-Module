@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 19:53:40 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/13 09:18:36 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:20:17 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Zombie.class.hpp"
 
-// ZOMBIE CLASS FUNCTION
+// ZOMBIE CLASS METHOD
 Zombie::Zombie() {
     this->_name = "Zombie";
     std::cout << "Zombie default constructor called" << std::endl;
