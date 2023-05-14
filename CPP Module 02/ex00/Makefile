@@ -6,11 +6,11 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/13 22:25:22 by jalevesq          #+#    #+#              #
-#    Updated: 2023/05/13 22:25:36 by jalevesq         ###   ########.fr        #
+#    Updated: 2023/05/14 18:26:37 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Harl_Be_Like_A_Karen
+NAME	= Fixed
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 CC = c++
 
