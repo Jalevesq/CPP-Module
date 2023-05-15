@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 11:41:43 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/13 14:11:05 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/15 12:33:45 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int main(void)
     PhoneBook oldPhoneBook;
     std::string input;
     
-    std::cout << "Bienvenue sur Old PhoneBook !" << std::endl;
+    std::cout << "Welcome on Old PhoneBook !" << std::endl;
     while (1)
     {
-        std::cout << "Vous avez 3 choix de commande. EXIT, SEARCH ou ADD. Vous pouvez ajouter un maximum de 8 personnes." << std::endl;
+        std::cout << "Vous avez 3 choix de commande. EXIT, SEARCH ou ADD. Vous pouvez avoir un maximum de 8 contacts." << std::endl;
         std::getline(std::cin, input);
         if (std::cin.eof())
             return (1);
