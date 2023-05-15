@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 11:17:13 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/15 12:49:18 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/15 13:01:18 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "PhoneBook.class.hpp"
 
 #define MAX_CONTACTS 8
-#define WIDTH 11
+#define WIDTH 10
 
 PhoneBook::PhoneBook(void) {
     std::cout << "Constructor Phonebook called" << std::endl;
@@ -29,28 +29,28 @@ PhoneBook::~PhoneBook(void) {
 void    PhoneBook::printSearch(void)
 {
     std::cout << std::right;
-    std::cout << std::setw(WIDTH) << "index" << " |  "
-              << std::setw(WIDTH) << "Prénom" << " |  "
-              << std::setw(WIDTH) << "Nom " << "|"
+    std::cout << std::setw(WIDTH) << "index" << "| "
+              << std::setw(WIDTH) << "Prénom" << "| "
+              << std::setw(WIDTH - 1) << "Nom" << "|"
               << std::setw(WIDTH) << "Nickname" << std::endl;
 
     for (int i = 0; i < MAX_CONTACTS; i++) {
-        std::string firstName = _contacts[i].getName().substr(0, WIDTH - 1);
-        if (_contacts[i].getName().length() >= WIDTH)
-            firstName[WIDTH - 2] = '.';
+        std::string firstName = _contacts[i].getName().substr(0, WIDTH);
+        if (_contacts[i].getName().length() > WIDTH)
+            firstName[WIDTH - 1] = '.';
 
-        std::string lastName = _contacts[i].getLastName().substr(0, WIDTH - 1);
-        if (_contacts[i].getLastName().length() >= WIDTH)
-            lastName[WIDTH - 2] = '.';
+        std::string lastName = _contacts[i].getLastName().substr(0, WIDTH);
+        if (_contacts[i].getLastName().length() > WIDTH)
+            lastName[WIDTH - 1] = '.';
 
-        std::string nickname =_contacts[i].getNickname().substr(0, WIDTH - 1);
-        if (_contacts[i].getNickname().length() >= WIDTH)
-            nickname[WIDTH - 2] = '.';
+        std::string nickname =_contacts[i].getNickname().substr(0, WIDTH);
+        if (_contacts[i].getNickname().length() > WIDTH)
+            nickname[WIDTH - 1] = '.';
 
 
-        std::cout << std::setw(WIDTH) << i + 1 << " | "
-                  << std::setw(WIDTH) << firstName << " | "
-                  << std::setw(WIDTH) << lastName << " | "
+        std::cout << std::setw(WIDTH) << i + 1 << "|"
+                  << std::setw(WIDTH) << firstName << "|"
+                  << std::setw(WIDTH) << lastName << "|"
                   << std::setw(WIDTH) << nickname << std::endl;
     }
 }
