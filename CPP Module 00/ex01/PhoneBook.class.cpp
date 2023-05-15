@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 11:17:13 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/13 14:25:13 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/15 12:49:18 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,6 @@ PhoneBook::PhoneBook(void) {
 
 PhoneBook::~PhoneBook(void) {
     std::cout << "Destructor Phonebook Called" << std::endl;
-}
-
-bool ft_is_digit(const std::string& str)
-{
-   for (std::string::const_iterator i = str.begin(); i != str.end(); ++i) {
-      if (!isdigit(*i)) {
-         return false;  
-      }
-   }
-   return true;  
 }
 
 void    PhoneBook::printSearch(void)
@@ -75,9 +65,9 @@ void    PhoneBook::search(void) {
         getline(std::cin, input);
         if (std::cin.eof())
             exit(1);
-        number = atoi(input.c_str());
-    } while (input.empty() || ft_is_digit(input) == false
-            || atoi(input.c_str()) < 1 || atoi(input.c_str()) > 8);
+		number = input[0] - '0';
+    } while (input.empty() || input.length() > 1
+		|| isdigit(input[0]) == false || number > 8 || number < 1);
     number -= 1;
     std::cout << "First Name:" << _contacts[number].getName() << std::endl;
     std::cout << "Last Name:" << _contacts[number].getLastName() << std::endl;
