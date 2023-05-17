@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/13 22:25:38 by jalevesq          #+#    #+#              #
-#    Updated: 2023/05/14 18:26:57 by jalevesq         ###   ########.fr        #
+#    Created: 2023/05/13 22:25:22 by jalevesq          #+#    #+#              #
+#    Updated: 2023/05/17 18:58:43 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ex01
+NAME	= Fixed
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 CC = c++
 
