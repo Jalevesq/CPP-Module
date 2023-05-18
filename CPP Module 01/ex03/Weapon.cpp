@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.class.cpp                                   :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:43:52 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/14 18:18:33 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/18 13:23:44 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.class.hpp"
+#include "Weapon.hpp"
 
 Weapon::Weapon()
 {
     // std::cout << "Default Constructor for Weapon called" << std::endl;
-    this->_type = "fist";
+    this->_type = "his fist";
 }
 
 Weapon::Weapon(std::string weapon)

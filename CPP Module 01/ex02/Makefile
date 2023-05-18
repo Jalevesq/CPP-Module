@@ -6,11 +6,11 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/11 20:11:57 by jalevesq          #+#    #+#              #
-#    Updated: 2023/05/15 12:38:12 by jalevesq         ###   ########.fr        #
+#    Updated: 2023/05/18 08:43:19 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Ref
+NAME	= ref
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 CC = c++
 

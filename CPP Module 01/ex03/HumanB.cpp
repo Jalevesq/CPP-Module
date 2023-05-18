@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.class.cpp                                   :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 17:46:16 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/14 18:17:58 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/05/12 17:45:40 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/05/18 13:24:07 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.class.hpp"
+#include "HumanB.hpp"
+#include <iostream>
 
-HumanA::HumanA(std::string name, Weapon& weapon): _weapon(weapon)
+HumanB::HumanB(std::string name)
 {
-    // std::cout << "Parameterized Constructor for HumanA called" << std::endl;
+    // std::cout << "Parametized constructor for HumanB Called" << std::endl;
     this->_name = name;
 }
 
-HumanA::~HumanA()
+HumanB::~HumanB()
 {
-    // std::cout << "Destructor for HumanA Called" << std::endl;
+    // std::cout << "Destructor for HumanB Called" << std::endl;
+
 }
 
-void    HumanA::attack()
+void    HumanB::setWeapon(Weapon& weapon)
 {
-    std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
+    this->_weapon = &weapon;
+}
+
+void    HumanB::attack()
+{
+    std::cout << _name << " attacks with " << _weapon->getType() << std::endl;
 }

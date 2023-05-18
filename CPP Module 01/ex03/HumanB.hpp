@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.class.hpp                                   :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:46:41 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/14 18:18:39 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/18 13:23:34 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_CLASS_HPP
-# define HUMANB_CLASS_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-# include "Weapon.class.hpp"
+# include "Weapon.hpp"
 # include <iostream>
 
 class HumanB {

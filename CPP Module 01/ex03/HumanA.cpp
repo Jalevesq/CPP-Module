@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.class.hpp                                     :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/13 20:58:15 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/14 18:16:15 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/05/12 17:46:16 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/05/18 13:23:09 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_CLASS_HPP
-# define HARL_CLASS_HPP
+#include "HumanA.hpp"
 
-#include <iostream>
+HumanA::HumanA(std::string name, Weapon& weapon): _weapon(weapon)
+{
+    // std::cout << "Parameterized Constructor for HumanA called" << std::endl;
+    this->_name = name;
+}
 
-class Harl {
-    public:
-        Harl();
-        ~Harl();
-        void complain( std::string level );
-    private:
-        void debug ( void );
-        void info ( void );
-        void warning ( void );
-        void error ( void );
-};
+HumanA::~HumanA()
+{
+    // std::cout << "Destructor for HumanA Called" << std::endl;
+}
 
-#endif
+void    HumanA::attack()
+{
+    std::cout << _name << " attacks with " << _weapon.getType() << std::endl;
+}

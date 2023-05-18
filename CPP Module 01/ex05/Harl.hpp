@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/13 22:14:33 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/18 13:48:15 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/05/13 20:58:15 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/05/18 13:31:39 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HARL_HPP
+# define HARL_HPP
 
 #include <iostream>
-#include "Harl.hpp"
 
-int main(int ac, char **av)
-{
-    if (ac != 2)
-    {
-        std::cerr << "Error: not good amount of argument (1)" << std::endl;
-        return (1);
-    }
-    Harl Karen;
+class Harl {
+    public:
+        Harl();
+        ~Harl();
+        void complain( std::string level );
+    private:
+        void debug ( void );
+        void info ( void );
+        void warning ( void );
+        void error ( void );
+};
 
-    Karen.complain(av[1]);
-}
+#endif

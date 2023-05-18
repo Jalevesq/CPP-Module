@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.class.cpp                                   :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 19:53:40 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/14 18:20:17 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/05/18 12:31:33 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.class.hpp"
+#include "Zombie.hpp"
 
 // ZOMBIE CLASS METHOD
 Zombie::Zombie() {
     this->_name = "Zombie";
-    std::cout << "Zombie default constructor called" << std::endl;
+    cout << "Zombie default constructor called" << endl;
 }
 
-Zombie::Zombie(std::string name) {
+Zombie::Zombie(string name) {
     this->_name = name;
-    std::cout << "Zombie constructor for " << _name << " called" << std::endl;
+    cout << "Zombie constructor for " << _name << " called" << endl;
 }
 
 Zombie::~Zombie () {
-    std::cout << "Destructor for " << _name << " Called" << std::endl;
+    cout << "Destructor for " << _name << " Called" << endl;
 }
 
 void    Zombie::announce(void) {
-    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    cout << _name << ": BraiiiiiiinnnzzzZ..." << endl;
 }
 
-void    Zombie::setName(std::string name) {
+void    Zombie::setName(string name) {
     this->_name = name;
 }

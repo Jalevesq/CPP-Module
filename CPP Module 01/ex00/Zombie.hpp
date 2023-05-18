@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/13 22:14:33 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/18 13:48:15 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/05/11 19:23:09 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/05/18 11:34:41 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#include <iostream>
-#include "Harl.hpp"
+# include <iostream>
+using std::cout;
+using std::endl;
+using std::string;
 
-int main(int ac, char **av)
-{
-    if (ac != 2)
-    {
-        std::cerr << "Error: not good amount of argument (1)" << std::endl;
-        return (1);
-    }
-    Harl Karen;
+class Zombie {
+    public:
+        Zombie();
+        Zombie(string name);
+        ~Zombie();
+        void    announce( void );
+    private:
+        string _name;
+};
 
-    Karen.complain(av[1]);
-}
+Zombie  *newZombie(string name);
+void randomChump(string name);
+
+#endif
