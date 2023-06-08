@@ -6,11 +6,11 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:46:15 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/05/17 18:55:18 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/08 15:34:37 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.class.hpp"
+#include "Fixed.hpp"
 #include <iostream>
 
 using std::cout;
