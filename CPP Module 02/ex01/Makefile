@@ -6,11 +6,11 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/13 22:25:22 by jalevesq          #+#    #+#              #
-#    Updated: 2023/05/17 18:58:43 by jalevesq         ###   ########.fr        #
+#    Updated: 2023/06/09 12:46:11 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Fixed
+NAME	= More_Fixed
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 CC = c++
 
@@ -28,5 +28,5 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re:	clean all
+re:	fclean all
 	@echo "Re-compilation terminé."
