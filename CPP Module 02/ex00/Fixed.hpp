@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:46:46 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/08 15:34:35 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/09 14:07:13 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Fixed {
         Fixed(const Fixed& other);
         ~Fixed();
         Fixed& operator=(const Fixed& other);
-        const int &getRawBits( void ) const;
+        int getRawBits( void ) const;
         void setRawBits( const int raw );
     private:
         int _number;

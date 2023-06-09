@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:46:44 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/08 15:34:27 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/09 14:07:32 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Fixed& Fixed::operator=(const Fixed& other) {
     return *this;
 }
 
-const int& Fixed::getRawBits( void ) const {
+int Fixed::getRawBits( void ) const {
     cout << "getRawBits member function called" << endl;
     return (this->_number);
 }

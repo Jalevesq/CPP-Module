@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:46:46 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/08 17:19:05 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/09 14:08:41 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Fixed {
 		int toInt( void ) const;
 		float toFloat( void ) const;
 		
-        const int &getRawBits( void ) const;
+        int getRawBits( void ) const;
         void setRawBits( const int newRawBits );
     private:
         int _rawBits;

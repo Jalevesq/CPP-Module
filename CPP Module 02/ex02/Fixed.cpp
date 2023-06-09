@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:34:35 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/09 13:59:24 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/09 14:12:45 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,7 +192,7 @@ float Fixed::toFloat(void) const {
 /*            SETTER & GETTER             */
 ////////////////////////////////////////////
 
-const int& Fixed::getRawBits( void ) const {
+int Fixed::getRawBits( void ) const {
     return (this->_rawBits);
 }
 
