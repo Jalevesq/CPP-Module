@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 15:57:35 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/09 17:06:56 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/10 19:14:32 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,20 @@
 
 int main(void)
 {
-	ClapTrap abc("Johnny");
-	ClapTrap def(abc);
+	ClapTrap johnny("Johnny");
+	ClapTrap bobby("Bobby");
 
-	cout << def.getName() << endl;
+	cout << endl;
+	johnny.setAttackDamage(1);
+	bobby.attack(johnny.getName());
+	johnny.takeDamage(bobby.getAttackDamage());
+	johnny.beRepaired(1);
+	while (bobby.getHitPoint() != 0)
+	{
+		cout << endl;
+		johnny.attack(bobby.getName());
+		bobby.takeDamage(johnny.getAttackDamage());
+	}
+	bobby.beRepaired(5);
+	cout << endl;
 }

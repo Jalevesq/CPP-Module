@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 15:57:59 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/09 17:06:22 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/10 18:53:22 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,33 +21,40 @@ class ClapTrap {
 		~ClapTrap();
 		ClapTrap(const string newName);
 		ClapTrap(const ClapTrap &other);
+	
+
+		// MANDATORY METHOD //
 		void beRepaired(unsigned int amount);
 		void takeDamage(unsigned int amount);
 		void attack(const std::string& target);
 
+		// GETTER //
 		const string&	getName(void) const;
-		const int&		getHitPoint(void) const;
-		const int&		getEnergyPoint(void) const;
-		const int&		getAttackDamage(void) const;
+		const unsigned int&		getHitPoint(void) const;
+		const unsigned int&		getEnergyPoint(void) const;
+		const unsigned int&		getAttackDamage(void) const;
 		
+		// SETTER //
 		void	setName(string newName);
-		void	setHitPoint(int newHitPoint);
-		void	setEnergyPoint(int newEnergyPoint);
-		void	setAttackDamage(int newAttackDamage);
+		void	setHitPoint(unsigned int newHitPoint);
+		void	setEnergyPoint(unsigned int newEnergyPoint);
+		void	setAttackDamage(unsigned int newAttackDamage);
 
-		void	addHitPoint(int addHitpoint);
-		void	addEnergyPoint(int addEnergyPoint);
-		void	addAttackDamage(int addAttackDamage);
+		// ADD
+		// void	addHitPoint(int addHitpoint);
+		// void	addEnergyPoint(int addEnergyPoint);
+		// void	addAttackDamage(int addAttackDamage);
 
-		void	subHitPoint(int subHitpoint);
-		void	subEnergyPoint(int subEnergyPoint);
-		void	subAttackDamage(int subAttackDamage);
+		// SUBSTRACT
+		// void	subHitPoint(int subHitpoint);
+		// void	subEnergyPoint(int subEnergyPoint);
+		// void	subAttackDamage(int subAttackDamage);
 
 		ClapTrap& operator=(const ClapTrap &other);
 	private:
 		ClapTrap();
 		string _name;
-		int _hitPoint;
-		int	_energyPoint;
-		int _attackDamage;
+		unsigned int _hitPoint;
+		unsigned int	_energyPoint;
+		unsigned int _attackDamage;
 };
