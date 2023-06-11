@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:26:39 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/11 09:34:03 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/11 10:13:26 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@
 int main(void)
 {
 	// TEST 1
-	// ScavTrap Johnny("Johnny");
-	// ScavTrap Bob("Bob"); 
-	// Bob.guardGate();
-	// while (Bob.getEnergyPoint() > 0)
-	// 	Bob.guardGate();
-	// cout << endl;
-	// Bob.attack(Johnny.getName());
-	// Bob.guardGate();
-	// cout << endl;
-	// while (Bob.getHitPoint() > 0)
-	// {
-	// 	Johnny.attack(Bob.getName());
-	// 	Bob.takeDamage(Johnny.getAttackDamage());
-	// 	cout << endl;
-	// }
-	// Bob.attack(Johnny.getName());
-	// Bob.guardGate();
-	// cout << endl;
+	ScavTrap Johnny("Johnny");
+	ScavTrap Bob("Bob"); 
+	Bob.guardGate();
+	while (Bob.getEnergyPoint() > 0)
+		Bob.guardGate();
+	cout << endl;
+	Bob.attack(Johnny.getName());
+	Bob.guardGate();
+	cout << endl;
+	while (Bob.getHitPoint() > 0)
+	{
+		Johnny.attack(Bob.getName());
+		Bob.takeDamage(Johnny.getAttackDamage());
+		cout << endl;
+	}
+	Bob.attack(Johnny.getName());
+	Bob.guardGate();
+	cout << endl;
 
 	// TEST 2
 	// ClapTrap Bob("Bob");
