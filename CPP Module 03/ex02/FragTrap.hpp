@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/10 19:28:17 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/11 10:21:28 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/06/11 10:18:31 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/06/11 10:24:54 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,19 @@ using std::string;
 using std::cout;
 using std::endl;
 
-class ScavTrap : public ClapTrap {
+class FragTrap : public ClapTrap {
     public:
-        ScavTrap(const string newName);
-        ScavTrap(const ScavTrap &copy);
-        ~ScavTrap();
+        FragTrap(const string newName);
+        FragTrap(const FragTrap &copy);
+        ~FragTrap();
 
-        ScavTrap& operator=(const ScavTrap& other);
+        FragTrap& operator=(const FragTrap& other);
 
         void guardGate();
+        void highFivesGuys(void);
         void attack(const string& target);
         
         
     private:
-        ScavTrap();
+        FragTrap();
 };
