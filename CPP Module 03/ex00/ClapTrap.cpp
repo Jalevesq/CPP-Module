@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 15:58:00 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/10 19:25:33 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/11 09:27:37 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ClapTrap::attack(const string& target)
 	}
 	else if (this->_energyPoint <= 0)
 	{
-		cout << CYAN << BOLD << "[ATTACK]" << RED << "[FAILED] " << RESET << this->_name << "can't attack" << target << "because he has no energy remaining!" << endl;
+		cout << CYAN << BOLD << "[ATTACK]" << RED << "[FAILED] " << RESET << this->_name << "can't attack " << target << " because he has no energy remaining!" << endl;
 		return ;
 	}
 	cout << CYAN << BOLD << "[ATTACK]" << GREEN << "[SUCCESS] " << RESET << this->_name << " attacked " << target << " and dealt " << this->_attackDamage <<" damage!" << endl;

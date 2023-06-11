@@ -6,40 +6,31 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:26:37 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/10 19:26:52 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/11 09:27:15 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-#define RESET           "\033[0m"
-#define BLACK           "\033[30m"
-#define RED             "\033[31m"
-#define GREEN           "\033[32m"
-#define YELLOW          "\033[33m"
-#define BLUE            "\033[34m"
-#define MAGENTA         "\033[35m"
-#define CYAN            "\033[36m"
-#define WHITE           "\033[37m"
-#define BOLD            "\033[1m"
-#define UNDERLINE       "\033[4m"
-#define REVERSED        "\033[7m"
-
 ////////////////////////////////////////
 /*       CONSTRUCTOR & DESTRUCTOR     */
 ////////////////////////////////////////
 
+ClapTrap::ClapTrap() : _hitPoint(10), _energyPoint(10), _attackDamage(0){
+	cout << "[Default Constructor of ClapTrap Called]" << endl;
+}
+
 ClapTrap::ClapTrap(const string newName) : _name(newName), _hitPoint(10), _energyPoint(10), _attackDamage(0) {
-	cout << "[Parametric Constructor of ClapTrap Called]" << RESET << endl;
+	cout << "[Parametric Constructor of ClapTrap Called]" << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) {
-	cout << "[Copy Constructor of ClapTrap Called]" << RESET << endl;
+	cout << "[Copy Constructor of ClapTrap Called]" << endl;
 	*this = other;
 }
 
 ClapTrap::~ClapTrap() {
-	cout << "[Destructor for ClapTrap Called]" << RESET << endl;
+	cout << "[Destructor for ClapTrap Called]" << endl;
 }
 
 ////////////////////////////////////////
@@ -50,15 +41,15 @@ void	ClapTrap::attack(const string& target)
 {
 	if (this->_hitPoint <= 0)
 	{
-		cout << CYAN << BOLD << "[ATTACK]" << RED << "[DEAD] " << RESET << this->_name << "can't attack " << target << " because he has no HP remaining!." << endl;
+		cout << CYAN << BOLD << "[ATTACK]" << RED << "[DEAD] " << RESET  << "ClapTrap " << this->_name << " can't attack " << target << " because he has no HP remaining!." << endl;
 		return ;
 	}
 	else if (this->_energyPoint <= 0)
 	{
-		cout << CYAN << BOLD << "[ATTACK]" << RED << "[FAILED] " << RESET << this->_name << "can't attack" << target << "because he has no energy remaining!" << endl;
+		cout << CYAN << BOLD << "[ATTACK]" << RED << "[FAILED] " << RESET  << "ClapTrap " << this->_name << " can't attack " << target << " because he has no energy remaining!" << endl;
 		return ;
 	}
-	cout << CYAN << BOLD << "[ATTACK]" << GREEN << "[SUCCESS] " << RESET << this->_name << " attacked " << target << " and dealt " << this->_attackDamage <<" damage!" << endl;
+	cout << CYAN << BOLD << "[ATTACK]" << GREEN << "[SUCCESS] " << RESET  << "ClapTrap " << this->_name << " attacked " << target << " and dealt " << this->_attackDamage <<" damage!" << endl;
 	this->_energyPoint -= 1;
 }
 
