@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:18:19 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/12 12:34:01 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/12 12:45:07 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,30 +35,36 @@ int main(void)
 	// i->makeSound(); //will output the cat sound!
 	// meta->makeSound();
 
+	// delete meta;
+	// delete j;
+	// delete i;
+
 	// Test 1
+	// const WrongAnimal* wrongAnimal = new WrongAnimal();
+	// const WrongAnimal* wrongCat = new WrongCat();
+	// const Animal* animal = new Animal();
+	// const Animal* cat = new Cat();
+	// const Animal* dog = new Dog();
 
-	const WrongAnimal* meta = new WrongAnimal();
-	const Animal* j = new Dog();
-	const WrongAnimal* i = new WrongCat();
+	// cout << endl;
+	// cout << wrongAnimal->getType() << endl;
+	// cout << wrongCat->getType() << endl;
+	// cout << animal->getType() << endl;
+	// cout << cat->getType() << endl;
+	// cout << dog->getType() << endl;
+	// cout << endl;
 
-	cout << endl;
+	// wrongAnimal->makeSound();
+	// wrongCat->makeSound(); //will output the cat sound!
+	// animal->makeSound();
+	// cat->makeSound();
+	// dog->makeSound();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	cout << meta->getType() << " " << endl;
-
-	cout << endl;
-
-	j->makeSound();
-	i->makeSound(); //will output the cat sound!
-	meta->makeSound();
-
-
-
-
-	delete meta;
-	delete j;
-	delete i;
+	// delete wrongAnimal;
+	// delete wrongCat;
+	// delete animal;
+	// delete cat;
+	// delete dog;
 	
 	return 0;
 }
