@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:18:18 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/11 12:56:58 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/12 12:29:43 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Animal::Animal(const Animal &copy) {
 }
 Animal::Animal() {
     cout << "[Default Constructor of animal Called]" << endl;
-    this->_type = "No Type";
+    this->_type = "<No Type>";
 }
 
 Animal::~Animal() {
@@ -57,5 +57,5 @@ void Animal::setType(const string newType) {
 }
 
 void Animal::makeSound(void) const {
-    cout << "No sound" << endl;
+    cout << "<Animal Sound>" << endl;
 }

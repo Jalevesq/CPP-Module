@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/11 11:57:37 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/12 10:27:18 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/06/12 10:27:06 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/06/12 10:27:32 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ using std::string;
 using std::cout;
 using std::endl;
 
-class Dog : public Animal{
+class Cat : public Animal{
     public:
-        Dog(const Dog &copy);
-        Dog();
-        ~Dog();
+        Cat(const Cat &copy);
+        Cat();
+        ~Cat();
         
         void makeSound() const;
-        Dog& operator=(const Dog &copy);        
+        Cat& operator=(const Cat &copy);        
 };
