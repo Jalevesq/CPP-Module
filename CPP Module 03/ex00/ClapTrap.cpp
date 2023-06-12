@@ -6,24 +6,11 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 15:58:00 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/11 09:27:37 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/12 09:51:18 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-
-#define RESET           "\033[0m"
-#define BLACK           "\033[30m"
-#define RED             "\033[31m"
-#define GREEN           "\033[32m"
-#define YELLOW          "\033[33m"
-#define BLUE            "\033[34m"
-#define MAGENTA         "\033[35m"
-#define CYAN            "\033[36m"
-#define WHITE           "\033[37m"
-#define BOLD            "\033[1m"
-#define UNDERLINE       "\033[4m"
-#define REVERSED        "\033[7m"
 
 ////////////////////////////////////////
 /*       CONSTRUCTOR & DESTRUCTOR     */
@@ -167,36 +154,3 @@ const unsigned int& ClapTrap::getEnergyPoint(void) const {
 const unsigned int& ClapTrap::getAttackDamage(void) const {
 	return(this->_attackDamage);
 }
-
-
-////////////////////////////////////////
-/*                 ADD                */
-////////////////////////////////////////
-
-// void	ClapTrap::addHitPoint(int addHitPoint) {
-// 	this->_hitPoint += addHitPoint;
-// }
-
-// void	ClapTrap::addEnergyPoint(int addEnergyPoint) {
-// 	this->_energyPoint += addEnergyPoint;
-// }
-
-// void	ClapTrap::addAttackDamage(int addAttackDamage) {
-// 	this->_attackDamage += addAttackDamage;
-// }
-
-////////////////////////////////////////
-/*              SUBSTRACT             */
-////////////////////////////////////////
-
-// void	ClapTrap::subHitPoint(int subHitPoint) {
-// 	this->_hitPoint -= subHitPoint;
-// }
-
-// void	ClapTrap::subEnergyPoint(int subEnergyPoint) {
-// 	this->_energyPoint -= subEnergyPoint;
-// }
-
-// void	ClapTrap::subAttackDamage(int subAttackDamage) {
-// 	this->_attackDamage -= subAttackDamage;
-// }
