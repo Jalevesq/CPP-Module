@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 10:18:23 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/11 10:33:03 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/12 09:55:08 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ void	FragTrap::attack(const string& target)
 
 void FragTrap::highFivesGuys(void) {
     if (this->_hitPoint <= 0)
-        cout << BOLD << "[HIGH FIVE]" << RED << "[DEAD] " << RESET << this->_name << " can't ask for a high five because he is dead (no hp remaining)!" << endl;
+        cout << BOLD << "[HIGH FIVE]" << RED << "[DEAD] " << RESET << "FragTrap " << this->_name << " can't ask for a high five because he is dead (no hp remaining)!" << endl;
     else if (this->_energyPoint <= 0)
-        cout << BOLD << "[HIGH FIVE]" << RED << "[FAILED] " << RESET <<this->_name << " can't ask for a high five because has no energy remaining!" << endl;
+        cout << BOLD << "[HIGH FIVE]" << RED << "[FAILED] " << RESET << "FragTrap " << this->_name << " can't ask for a high five because has no energy remaining!" << endl;
     else
     {
         this->_energyPoint -= 1;   
-        cout << BOLD << "[HIGH FIVE]" << GREEN << "[SUCCESS] " << RESET << "Would you like to give a high five to a FragTrap ?" << endl;
+        cout << BOLD << "[HIGH FIVE]" << GREEN << "[SUCCESS] " << RESET << "FragTrap " << this->_name << " ask you for a highfive!" << endl;
     }
 }
 

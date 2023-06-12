@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 19:26:35 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/10 23:37:38 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/12 09:48:05 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ class ClapTrap {
 	protected:
 		ClapTrap();
 		string _name;
-		unsigned int _hitPoint;
+		unsigned int	_hitPoint;
 		unsigned int	_energyPoint;
-		unsigned int _attackDamage;
+		unsigned int	_attackDamage;
 };

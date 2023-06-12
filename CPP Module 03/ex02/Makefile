@@ -6,11 +6,11 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/10 19:26:17 by jalevesq          #+#    #+#              #
-#    Updated: 2023/06/10 19:27:27 by jalevesq         ###   ########.fr        #
+#    Updated: 2023/06/12 09:53:19 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ex01
+NAME	= ex02
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 CC = c++
 
