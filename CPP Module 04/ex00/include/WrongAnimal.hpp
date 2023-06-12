@@ -16,7 +16,7 @@ class WrongAnimal {
 		const string& getType() const;
 		void    setType(const string newType);
 
-		virtual void makeSound() const;
+		void makeSound() const;
 
 		WrongAnimal &		operator=( WrongAnimal const & rhs );
 
