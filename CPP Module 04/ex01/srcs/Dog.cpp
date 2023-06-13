@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 12:08:22 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/12 10:39:48 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/13 14:58:59 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ Dog::Dog(const Dog &copy) {
 Dog::Dog() {
     cout << "[Default Construtor of Dog Called]" << endl;
     this->_type = "Dog";
+    dogBrain = new Brain;
 }
 
 Dog::~Dog() {
     cout << "[Destructor of Dog Called]" << endl;
+    delete dogBrain;
 }
 
 void Dog::makeSound(void) const {

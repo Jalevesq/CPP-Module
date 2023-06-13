@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:57:37 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/12 10:27:18 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/13 14:58:02 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 using std::string;
 using std::cout;
 using std::endl;
@@ -25,5 +26,7 @@ class Dog : public Animal{
         ~Dog();
         
         void makeSound() const;
-        Dog& operator=(const Dog &copy);        
+        Dog& operator=(const Dog &copy);  
+    private:
+        Brain* dogBrain;      
 };

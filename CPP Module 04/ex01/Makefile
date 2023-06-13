@@ -6,12 +6,12 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/11 11:18:21 by jalevesq          #+#    #+#              #
-#    Updated: 2023/06/11 11:18:32 by jalevesq         ###   ########.fr        #
+#    Updated: 2023/06/13 15:10:12 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ex00
-CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
+NAME	= ex01
+CPPFLAGS	= -Wall -Werror -Wextra -g -std=c++98
 CC = c++
 
 SRCS	= $(shell find . -iname "*.cpp")
