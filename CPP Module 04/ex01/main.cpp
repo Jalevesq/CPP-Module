@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:18:19 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/13 15:10:57 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:12:50 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 #include "include/Brain.hpp"
 
 #define ANIMAL_NBR 10
+
+// Classe Brain n'est pas sous la forme orthodoxe
+// Doit changer les classes Dog et Cat dans operateur overload (et constructeur par copy?) car ajout de la classe Brain
 
 int main(void)
 {
