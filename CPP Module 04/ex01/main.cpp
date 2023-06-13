@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:18:19 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/13 15:12:50 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:42:19 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,15 @@
 int main(void)
 {
 	Animal *animalList[ANIMAL_NBR];
-	for (int i = 0; i < ANIMAL_NBR; i++)
+	for (size_t i = 0; i < ANIMAL_NBR; i++)
 	{
 		if (i < ANIMAL_NBR / 2)
 			animalList[i] = new Dog();
 		else if (i >= ANIMAL_NBR / 2)
 			animalList[i] = new Cat();
+		animalList[i]->makeSound();
 	}
-	
-	for (int i = 0; i < ANIMAL_NBR - 1; i++)
-	{
+	for (size_t i = 0; i < ANIMAL_NBR; i++)
 		delete animalList[i];
-	}
 	return 0;
 }

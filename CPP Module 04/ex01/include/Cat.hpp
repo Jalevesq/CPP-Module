@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:27:06 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/13 14:57:44 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:39:32 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ class Cat : public Animal{
         void makeSound() const;
         Cat& operator=(const Cat &copy);     
     private:
-        Brain* catBrain;
+        Brain* _catBrain;
 };

@@ -17,7 +17,7 @@ class Brain
 		Brain( Brain const & src );
 		~Brain();
 
-		// Brain &		operator=( Brain const & rhs );
+		Brain &		operator=( Brain const & rhs );
 
 	private:
 		string _ideas[100];
