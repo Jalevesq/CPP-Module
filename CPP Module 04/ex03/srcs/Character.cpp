@@ -92,7 +92,10 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter& target) {
-	this->_materiaInventory[idx]->AMateria::use(target);
+	if (this->_materiaInventory[idx] != nullptr)
+		this->_materiaInventory[idx]->AMateria::use(target);
+	else
+		cout << this->_name << " can't use slot " << idx << " because it is empty!"<< endl;
 }
 
 /*

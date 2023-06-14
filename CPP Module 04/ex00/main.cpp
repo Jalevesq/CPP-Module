@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:18:19 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/12 12:45:07 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/14 14:36:11 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,25 @@
 int main(void)
 {
 	// Subject Test
-	// const Animal* meta = new Animal();
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	// cout << endl;
+	cout << endl;
 
-	// std::cout << j->getType() << " " << std::endl;
-	// std::cout << i->getType() << " " << std::endl;
-	// cout << meta->getType() << " " << endl;
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	cout << meta->getType() << " " << endl;
 
-	// cout << endl;
+	cout << endl;
 
-	// j->makeSound();
-	// i->makeSound(); //will output the cat sound!
-	// meta->makeSound();
+	j->makeSound();
+	i->makeSound(); //will output the cat sound!
+	meta->makeSound();
 
-	// delete meta;
-	// delete j;
-	// delete i;
+	delete meta;
+	delete j;
+	delete i;
 
 	// Test 1
 	// const WrongAnimal* wrongAnimal = new WrongAnimal();
@@ -65,6 +65,4 @@ int main(void)
 	// delete animal;
 	// delete cat;
 	// delete dog;
-	
-	return 0;
 }
