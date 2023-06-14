@@ -32,7 +32,15 @@ Character::Character( const Character & src )
 
 Character::~Character()
 {
-	// cout << "[Destructor of Character Called]" << endl;
+	cout << "[Destructor of Character Called]" << endl;
+	for (int i = 0; i < SLOTS; i++)
+	{
+		if (this->_materiaInventory[i] != nullptr)
+		{
+			delete this->_materiaInventory[i];
+			this->_materiaInventory[i] = nullptr;
+		}
+	}
 }
 
 /*
@@ -85,7 +93,6 @@ void Character::unequip(int idx) {
 
 void Character::use(int idx, ICharacter& target) {
 	this->_materiaInventory[idx]->AMateria::use(target);
-	this->_materiaInventory[idx] = nullptr;
 }
 
 /*

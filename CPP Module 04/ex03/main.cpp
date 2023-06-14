@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 08:20:21 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/14 11:39:38 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/14 12:23:11 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,20 @@ int main(void)
 	// cout << test->getType() << endl;
 	// Johnny.equip(test);
 	// delete test;
+
+	// Subject test
+	ICharacter *me = new Character("me");
+	ICharacter *Bob = new Character("Bob");
+	AMateria *tmp;
+	tmp = new Ice;
+	me->equip(tmp);
+	tmp = new Cure;
+	me->equip(tmp);
+
+	me->use(0, *Bob);
+	me->use(1, *Bob);
+
+	delete Bob;
+	delete me;
 	return (0);
 }
