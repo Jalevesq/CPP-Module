@@ -6,10 +6,10 @@
 
 Bureaucrat::Bureaucrat( string newName, int newGrade)
 {
-	// if (newGrade > 150)
-	// 	throw("GradeTooLowException");
-	// if (newGrade < 1)
-	// 	throw("GradeTooHighException");
+	if (newGrade > 150)
+		throw(std::exception());
+	if (newGrade < 1)
+		throw(std::exception());
 	this->_grade = newGrade;
 	this->_name = newName;
 	cout << "[Default Constrcutor of Bureaucrat]" << endl;
