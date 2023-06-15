@@ -71,9 +71,9 @@ void Bureaucrat::incrementGrade() {
 
 void Bureaucrat::decrementGrade() {
 	// if grade > 150 throw error
+	this->_grade++;
 	if (this->_grade > 150)
 		throw(GradeTooLowException());
-	this->_grade++;
 }
 
 /*

@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Exception.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 20:54:09 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/14 21:49:03 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/06/14 16:24:37 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/06/14 21:26:17 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
+#include "./include/Bureaucrat.hpp"
+#include "./include/Exception.hpp"
 
-class GradeTooHighException : public std::exception {
-    public:
-        virtual const char *what() const throw() {
-            return ("Bureaucrat::GradeTooHighException");
-        }
-};
+using std::string;
+using std::cout;
+using std::endl;
 
-class GradeTooLowException : public std::exception {
-    public:
-        virtual const char *what() const throw() {
-            return ("Bureaucrat::GradeTooLowException");
-        }
-};
+int main(void) {
+	
+}
