@@ -3,12 +3,13 @@
 
 # include <iostream>
 # include <string>
-# include "Exception.hpp"
+# include "Form.hpp"
 
 using std::string;
 using std::cout;
 using std::endl;
 
+class Form;
 class Bureaucrat
 {
 
@@ -22,7 +23,21 @@ class Bureaucrat
 
 		void incrementGrade();
 		void decrementGrade();
+		void signForm(Form &form);
 		Bureaucrat &		operator=( Bureaucrat const & rhs );
+
+		class GradeTooHighException : public std::exception {
+			public:
+			virtual const char *what() const throw() {
+				return ("Bureaucrat's grade is too high");
+			}
+		};
+		class GradeTooLowException : public std::exception {
+   			public:
+      		virtual const char *what() const throw() {
+       	   		return ("Bureaucrat's grade is too low");
+       		}
+		};
 
 	private:
 		Bureaucrat();
