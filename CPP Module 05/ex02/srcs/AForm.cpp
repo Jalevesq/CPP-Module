@@ -59,7 +59,7 @@ AForm &				AForm::operator=( AForm const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, AForm const & i )
 {
-	o << "AForm Name: " << i.getName() << ", Is Signed: " << i.getIsSigned() << ", Grade to Sign: " << i.getGradeToSign() << ", Grade to Execute: " << i.getGradeToExecute();
+	o << "Form Name: " << i.getName() << ", Is Signed: " << i.getIsSigned() << ", Grade to Sign: " << i.getGradeToSign() << ", Grade to Execute: " << i.getGradeToExecute();
 	return o;
 }
 

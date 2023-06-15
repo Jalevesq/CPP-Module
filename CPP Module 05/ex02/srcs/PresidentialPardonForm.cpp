@@ -1,26 +1,25 @@
-#include "../include/ShrubberyCreationForm.hpp"
+#include "../include/PresidentialPardonForm.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
-
-ShrubberyCreationForm::ShrubberyCreationForm(string newName)
+PresidentialPardonForm::PresidentialPardonForm(string newName)
 {
 	AForm::setName(newName);
-	AForm::setGradeToSign(145);
-	AForm::setGradeToExecute(137);
-	cout << "[Parametric Constructor of ShrubberyCreationForm Called]" << endl;
+	AForm::setGradeToSign(25);
+	AForm::setGradeToExecute(5);
+	cout << "[Parametric Constructor of PresidentialPardonForm Called]" << endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+PresidentialPardonForm::PresidentialPardonForm()
 {
-	cout << "[Default Constructor of ShrubberyCreationForm Called]" << endl;
+	cout << "[Default Constructor of PresidentialPardonForm Called]" << endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src )
+PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src )
 {
 	*this = src;
-	cout << "[Copy Constructor of ShrubberyCreationForm Called]" << endl;
+	cout << "[Copy Constructor of PresidentialPardonForm Called]" << endl;
 }
 
 
@@ -28,9 +27,9 @@ ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src 
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
+PresidentialPardonForm::~PresidentialPardonForm()
 {
-	cout << "[Destructor of ShrubberyCreationForm Called]" << endl;
+	cout << "[Destructor of PresidentialPardonForm Called]" << endl;
 }
 
 
@@ -38,7 +37,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationForm const & rhs )
+PresidentialPardonForm &				PresidentialPardonForm::operator=( PresidentialPardonForm const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -54,12 +53,11 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void ShrubberyCreationForm::beSigned(Bureaucrat sign) {
+void PresidentialPardonForm::beSigned(Bureaucrat sign) {
 	if (sign.getGrade() > AForm::getGradeToSign())
 		throw (AForm::GradeTooLowException());
 	AForm::setIsSigned(true);
 }
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

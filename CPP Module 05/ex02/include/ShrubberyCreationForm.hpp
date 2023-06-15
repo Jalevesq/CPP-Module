@@ -19,13 +19,11 @@ class ShrubberyCreationForm : public AForm
 
 		void beSigned(Bureaucrat sign);
 
-		// ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
+		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
 
 	private:
 		ShrubberyCreationForm();
 
 };
-
-std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i );
 
 #endif /* ******************************************* SHRUBBERYCREATIONFORM_H */

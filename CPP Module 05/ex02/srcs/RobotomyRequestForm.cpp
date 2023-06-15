@@ -1,26 +1,26 @@
-#include "../include/ShrubberyCreationForm.hpp"
+#include "../include/RobotomyRequestForm.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ShrubberyCreationForm::ShrubberyCreationForm(string newName)
+RobotomyRequestForm::RobotomyRequestForm(string newName)
 {
 	AForm::setName(newName);
-	AForm::setGradeToSign(145);
-	AForm::setGradeToExecute(137);
-	cout << "[Parametric Constructor of ShrubberyCreationForm Called]" << endl;
+	AForm::setGradeToSign(72);
+	AForm::setGradeToExecute(45);
+	cout << "[Parametric Constructor of RobotomyRequestForm Called]" << endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+RobotomyRequestForm::RobotomyRequestForm()
 {
-	cout << "[Default Constructor of ShrubberyCreationForm Called]" << endl;
+	cout << "[Default Constructor of RobotomyRequestForm Called]" << endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src )
+RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
 {
 	*this = src;
-	cout << "[Copy Constructor of ShrubberyCreationForm Called]" << endl;
+	cout << "[Copy Constructor of RobotomyRequestForm Called]" << endl;
 }
 
 
@@ -28,9 +28,9 @@ ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src 
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
+RobotomyRequestForm::~RobotomyRequestForm()
 {
-	cout << "[Destructor of ShrubberyCreationForm Called]" << endl;
+	cout << "[Destructor of RobotomyRequestForm Called]" << endl;
 }
 
 
@@ -38,7 +38,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationForm const & rhs )
+RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -54,12 +54,11 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void ShrubberyCreationForm::beSigned(Bureaucrat sign) {
+void RobotomyRequestForm::beSigned(Bureaucrat sign) {
 	if (sign.getGrade() > AForm::getGradeToSign())
 		throw (AForm::GradeTooLowException());
 	AForm::setIsSigned(true);
 }
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
