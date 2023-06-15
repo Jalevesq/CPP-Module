@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:24:37 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/14 21:16:04 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/14 21:17:38 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 int main(void) {
 	// Test 1
-	// try {
-	// 	Bureaucrat def("Bobby", 0);
-	// 	Bureaucrat abc("Johnny", 156);
-	// } catch (GradeTooHighException& e) {
-	// 	cout << e.what() << endl;
-	// } catch (GradeTooLowException& e) {
-	// 	cout << e.what() << endl;
-	// }
+	try {
+		Bureaucrat def("Bobby", 0);
+		Bureaucrat abc("Johnny", 156);
+	} catch (GradeTooHighException& e) {
+		cout << e.what() << endl;
+	} catch (GradeTooLowException& e) {
+		cout << e.what() << endl;
+	}
 	
 	// Test 2
 	// Bureaucrat abc("Johnny", 150);
@@ -40,8 +40,12 @@ int main(void) {
 	// } catch (GradeTooHighException& e) {
 	// 	cout << e.what() << endl;
 	// }
-
+	
 	// Test 4
+	// Bureaucrat def("Johnny", 151);
+	// Bureaucrat abc("Licorne", 0);
+	
+	// Test 5
 	// Bureaucrat test("Toto", 75);
 	// cout << test << endl;
 	// for (int i = 0; i < 5; i++)
