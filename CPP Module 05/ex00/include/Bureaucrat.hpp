@@ -3,7 +3,6 @@
 
 # include <iostream>
 # include <string>
-# include "Exception.hpp"
 
 using std::string;
 using std::cout;
@@ -23,6 +22,19 @@ class Bureaucrat
 		void incrementGrade();
 		void decrementGrade();
 		Bureaucrat &		operator=( Bureaucrat const & rhs );
+
+		class GradeTooHighException : public std::exception {
+			public:
+			virtual const char *what() const throw() {
+				return ("Bureaucrat's grade is too high");
+			}
+		};
+		class GradeTooLowException : public std::exception {
+   			public:
+      		virtual const char *what() const throw() {
+       	   		return ("Bureaucrat's grade is too low");
+       		}
+		};
 
 	private:
 		Bureaucrat();
