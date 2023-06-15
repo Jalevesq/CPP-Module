@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:24:37 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/15 11:32:24 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/15 16:25:28 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,23 @@ using std::cout;
 using std::endl;
 
 int main(void) {
-	Bureaucrat Bobby("Bobby", 2);
-	Bureaucrat Johnny("Johnny", 4);
-	Form form2("form2", 3, 1);
+	// Test 1
+	// Bureaucrat Bobby("Bobby", 23);
+	// Bureaucrat Johnny("Johnny", 67);
+	// Form form2("form2", 36, 1);
+	// cout << endl;
+	// Johnny.signForm(form2);
+	// cout << endl;
+	// cout << form2 << endl;
+	// cout << form2.getIsSigned() << endl;
+	// Bobby.signForm(form2);
+	// cout << form2.getIsSigned() << endl;
+	
+	// Test 2
+	// Form form2("form2", 151, 1);
+	// Form form2("form2", 0, 1);
+	// Form form2("form2", 1, 0);
+	// Form form2("form2", 1, 151);
 
-	cout << endl;
-	Johnny.signForm(form2);
-	cout << endl;
-	cout << form2.getIsSigned() << endl;
-	Bobby.signForm(form2);
-	cout << form2.getIsSigned() << endl;
+	
 }
