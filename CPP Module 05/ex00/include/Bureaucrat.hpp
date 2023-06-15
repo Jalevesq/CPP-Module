@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include "Exception.hpp"
 
 using std::string;
 using std::cout;

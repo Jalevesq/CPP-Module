@@ -7,9 +7,9 @@
 Bureaucrat::Bureaucrat( string newName, int newGrade)
 {
 	if (newGrade > 150)
-		throw(std::exception());
+		throw(GradeTooLowException());
 	if (newGrade < 1)
-		throw(std::exception());
+		throw(GradeTooHighException());
 	this->_grade = newGrade;
 	this->_name = newName;
 	cout << "[Default Constrcutor of Bureaucrat]" << endl;
@@ -65,11 +65,15 @@ std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 void Bureaucrat::incrementGrade() {
 	// if grade < 1 throw error
 	this->_grade--;
+	if (this->_grade < 1)
+		throw(GradeTooHighException());
 }
 
 void Bureaucrat::decrementGrade() {
 	// if grade > 150 throw error
 	this->_grade++;
+	if (this->_grade > 150)
+		throw(GradeTooLowException());
 }
 
 /*
