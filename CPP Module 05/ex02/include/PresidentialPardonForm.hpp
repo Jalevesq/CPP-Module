@@ -14,7 +14,8 @@ class PresidentialPardonForm : public AForm
 		~PresidentialPardonForm();
 
 
-		void beSigned(Bureaucrat sign);
+		// void beSigned(Bureaucrat sign);
+		// void execute(Bureaucrat const& executor);
 
 		PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
 

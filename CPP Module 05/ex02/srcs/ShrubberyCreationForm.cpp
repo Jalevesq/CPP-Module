@@ -54,10 +54,19 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void ShrubberyCreationForm::beSigned(Bureaucrat sign) {
-	if (sign.getGrade() > AForm::getGradeToSign())
-		throw (AForm::GradeTooLowException());
-	AForm::setIsSigned(true);
+// void ShrubberyCreationForm::beSigned(Bureaucrat sign) {
+// 	if (sign.getGrade() > AForm::getGradeToSign())
+// 		throw (AForm::GradeTooLowException());
+// 	AForm::setIsSigned(true);
+// }
+
+void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
+	if (AForm::getIsSigned() == false)
+		throw(AForm::FormNotSignException());
+	else if (AForm::getGradeToExecute() < executor.getGrade())
+		throw(AForm::GradeTooLowException());
+	// create file describe in pdf
+	cout << executor.getName() << " executed " << AForm::getName() << endl;
 }
 
 /*

@@ -17,7 +17,8 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		~ShrubberyCreationForm();
 
-		void beSigned(Bureaucrat sign);
+		// void beSigned(Bureaucrat sign);
+		void execute(Bureaucrat const& executor) const;
 
 		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
 

@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:24:37 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/15 18:34:18 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/16 15:06:14 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ using std::endl;
 int main(void) {
 	// ShrubberyCreationForm tree("Tree Form");
 	// RobotomyRequestForm robot("Robot Form");
-	PresidentialPardonForm president("president");
-	// Bureaucrat Johnny("Johnny", 100);
-	cout << president << endl;
+	ShrubberyCreationForm president("Tree Form");
+	Bureaucrat Johnny("Johnny", 150);
+	Johnny.signForm(president);
+	Johnny.executeForm(president);
+	// cout << president << endl;
 	// Johnny.signForm(FormCreation);
 }

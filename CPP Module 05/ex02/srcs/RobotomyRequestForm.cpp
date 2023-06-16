@@ -54,11 +54,11 @@ RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm con
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void RobotomyRequestForm::beSigned(Bureaucrat sign) {
-	if (sign.getGrade() > AForm::getGradeToSign())
-		throw (AForm::GradeTooLowException());
-	AForm::setIsSigned(true);
-}
+// void RobotomyRequestForm::beSigned(Bureaucrat sign) {
+// 	if (sign.getGrade() > AForm::getGradeToSign())
+// 		throw (AForm::GradeTooLowException());
+// 	AForm::setIsSigned(true);
+// }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

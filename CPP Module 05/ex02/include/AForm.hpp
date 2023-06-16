@@ -21,7 +21,8 @@ class AForm
 
 		AForm &		operator=( AForm const & rhs );
 
-		virtual void beSigned(Bureaucrat sign) = 0;
+		void beSigned(Bureaucrat sign);
+		virtual void execute(Bureaucrat const& executor) const = 0;
 
 		const string& getName() const;
 		const int& getGradeToSign() const;
@@ -36,14 +37,20 @@ class AForm
 		class GradeTooHighException : public std::exception {
 			public:
 			virtual const char *what() const throw() {
-				return ("AForm: grade is too high");
+				return ("Form: grade is too high");
 			}
 		};
 		class GradeTooLowException : public std::exception {
    			public:
       		virtual const char *what() const throw() {
-       	   		return ("AForm: grade is too low");
+       	   		return ("Form: grade is too low");
        		}
+		};
+		class FormNotSignException : public std::exception {
+			public:
+			virtual const char *what() const throw() {
+				return ("Form is not signed");
+			}
 		};
 
 	private:

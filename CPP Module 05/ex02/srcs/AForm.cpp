@@ -68,11 +68,11 @@ std::ostream &			operator<<( std::ostream & o, AForm const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-// void AForm::beSigned(Bureaucrat sign) {
-// 	if (sign.getGrade() > this->_gradeToSign)
-// 		throw (AForm::GradeTooLowException());
-// 	this->_isSigned = true;
-// }
+void AForm::beSigned(Bureaucrat sign) {
+	if (sign.getGrade() > this->_gradeToSign)
+		throw (AForm::GradeTooLowException());
+	this->_isSigned = true;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

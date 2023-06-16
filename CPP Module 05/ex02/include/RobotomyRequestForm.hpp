@@ -13,7 +13,8 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm( RobotomyRequestForm const & src );
 		~RobotomyRequestForm();
 
-		void beSigned(Bureaucrat sign);
+		// void beSigned(Bureaucrat sign);
+		// void execute(Bureaucrat const& executor);
 	
 		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
 

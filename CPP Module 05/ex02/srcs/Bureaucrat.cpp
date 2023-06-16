@@ -85,6 +85,16 @@ void Bureaucrat::signForm(AForm &form) {
 	}
 }
 
+void Bureaucrat::executeForm(AForm const & form) {
+	try {
+		form.execute(*this);
+	} catch (AForm::GradeTooLowException& e) {
+		cout << e.what() << endl;
+	} catch (AForm::FormNotSignException& e) {
+		cout << e.what() << endl;
+	}
+}
+
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

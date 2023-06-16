@@ -53,11 +53,11 @@ PresidentialPardonForm &				PresidentialPardonForm::operator=( PresidentialPardo
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void PresidentialPardonForm::beSigned(Bureaucrat sign) {
-	if (sign.getGrade() > AForm::getGradeToSign())
-		throw (AForm::GradeTooLowException());
-	AForm::setIsSigned(true);
-}
+// void PresidentialPardonForm::beSigned(Bureaucrat sign) {
+// 	if (sign.getGrade() > AForm::getGradeToSign())
+// 		throw (AForm::GradeTooLowException());
+// 	AForm::setIsSigned(true);
+// }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
