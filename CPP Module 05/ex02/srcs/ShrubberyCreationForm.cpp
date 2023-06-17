@@ -51,15 +51,7 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 ** --------------------------------- METHODS ----------------------------------
 */
 
-// void ShrubberyCreationForm::beSigned(Bureaucrat sign) {
-// 	if (sign.getGrade() > AForm::getGradeToSign())
-// 		throw (AForm::GradeTooLowException());
-// 	AForm::setIsSigned(true);
-// }
-
 void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
-	if (AForm::getIsSigned() == false)
-		throw(AForm::FormNotSignException());
     std::ofstream outputFile(AForm::getTarget() + "_shrubbery");
 	if (outputFile.is_open() == true) {
 		outputFile << "       _-_" << std::endl;
