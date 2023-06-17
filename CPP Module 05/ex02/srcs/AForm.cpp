@@ -8,13 +8,14 @@
 AForm::AForm()
 {
 	_name = "<No Name>";
+	_target = "<No Target>";
 	_isSigned = false;
 	_gradeToSign = 150;
 	_gradeToExecute = 150;
 	cout << "[Default Constructor of AForm Called]" << endl;
 }
 
-AForm::AForm(string newName, int newGradeToSign, int newGradeToExecute) : _name(newName), _gradeToSign(newGradeToSign), _gradeToExecute(newGradeToExecute)
+AForm::AForm(string newName, string newTarget ,int newGradeToSign, int newGradeToExecute) : _target(newTarget), _name(newName) ,_gradeToSign(newGradeToSign), _gradeToExecute(newGradeToExecute)
 {
 	_isSigned = false;
 	if (newGradeToSign > 150 || newGradeToExecute > 150)
@@ -70,7 +71,7 @@ std::ostream &			operator<<( std::ostream & o, AForm const & i )
 
 void AForm::beSigned(Bureaucrat sign) {
 	if (sign.getGrade() > this->_gradeToSign)
-		throw (AForm::GradeTooLowException());
+		throw (Bureaucrat::GradeTooLowException());
 	this->_isSigned = true;
 }
 
@@ -80,6 +81,10 @@ void AForm::beSigned(Bureaucrat sign) {
 
 const string& AForm::getName() const {
 	return (this->_name);
+}
+
+const string& AForm::getTarget() const {
+	return(this->_target);
 }
 
 const int& AForm::getGradeToSign() const {
@@ -96,6 +101,10 @@ const bool& AForm::getIsSigned() const {
 
 void AForm::setName(const string newName) {
 	this->_name = newName;
+}
+
+void AForm::setTarget(const string newTarget) {
+	this->_target = newTarget;
 }
 
 void AForm::setGradeToSign(const int newGradeToSign) {

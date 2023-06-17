@@ -4,11 +4,8 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ShrubberyCreationForm::ShrubberyCreationForm(string newName)
+ShrubberyCreationForm::ShrubberyCreationForm(string newName, string newTarget) : AForm(newName, newTarget, 145, 137)
 {
-	AForm::setName(newName);
-	AForm::setGradeToSign(145);
-	AForm::setGradeToExecute(137);
 	cout << "[Parametric Constructor of ShrubberyCreationForm Called]" << endl;
 }
 
@@ -63,10 +60,21 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
 	if (AForm::getIsSigned() == false)
 		throw(AForm::FormNotSignException());
-	else if (AForm::getGradeToExecute() < executor.getGrade())
-		throw(AForm::GradeTooLowException());
-	// create file describe in pdf
-	cout << executor.getName() << " executed " << AForm::getName() << endl;
+    std::ofstream outputFile(AForm::getTarget() + "_shrubbery");
+	if (outputFile.is_open() == true) {
+		outputFile << "       _-_" << std::endl;
+		outputFile << "    /~~   ~~\\" << std::endl;
+		outputFile << " /~~         ~~\\" << std::endl;
+		outputFile << "{               }" << std::endl;
+		outputFile << " \\  _-     -_  /" << std::endl;
+		outputFile << "   ~  \\ //  ~" << std::endl;
+		outputFile << "_- -   | | _- _" << std::endl;
+		outputFile << "  _ -  | |   -_" << std::endl;
+		outputFile << "      // \\\\" << std::endl;
+		outputFile.close();
+	} else {
+    	std::cerr << executor.getName() << " failed to create shrubbery file. (System error?)" << std::endl;
+    }
 }
 
 /*

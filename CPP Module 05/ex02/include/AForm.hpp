@@ -15,7 +15,7 @@ class AForm
 
 	public:
 		AForm();
-		AForm(string newName, int newGradeToSign, int newGradeToExecute);
+		AForm(string newName, string newTarget, int newGradeToSign, int newGradeToExecute);
 		AForm( AForm const & src );
 		virtual ~AForm();
 
@@ -25,10 +25,12 @@ class AForm
 		virtual void execute(Bureaucrat const& executor) const = 0;
 
 		const string& getName() const;
+		const string& getTarget() const;
 		const int& getGradeToSign() const;
 		const int& getGradeToExecute() const;
 		const bool& getIsSigned() const;
 
+		void setTarget(const string newTarget);
 		void setName(const string newName);
 		void setGradeToSign(const int newGradeToSign);
 		void setGradeToExecute(const int newGradeToExecute);
@@ -37,13 +39,13 @@ class AForm
 		class GradeTooHighException : public std::exception {
 			public:
 			virtual const char *what() const throw() {
-				return ("Form: grade is too high");
+				return ("form requirement grade is too high");
 			}
 		};
 		class GradeTooLowException : public std::exception {
    			public:
       		virtual const char *what() const throw() {
-       	   		return ("Form: grade is too low");
+       	   		return ("form requirement grade is too low");
        		}
 		};
 		class FormNotSignException : public std::exception {
@@ -54,6 +56,7 @@ class AForm
 		};
 
 	private:
+		string _target;
 		string	_name;
 		bool	_isSigned;
 		int		_gradeToSign;
