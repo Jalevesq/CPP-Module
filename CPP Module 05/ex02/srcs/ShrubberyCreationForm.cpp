@@ -6,18 +6,18 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(string newName, string newTarget) : AForm(newName, newTarget, 145, 137)
 {
-	cout << "[Parametric Constructor of ShrubberyCreationForm Called]" << endl;
+	// cout << "[Parametric Constructor of ShrubberyCreationForm Called]" << endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 {
-	cout << "[Default Constructor of ShrubberyCreationForm Called]" << endl;
+	// cout << "[Default Constructor of ShrubberyCreationForm Called]" << endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src )
 {
 	*this = src;
-	cout << "[Copy Constructor of ShrubberyCreationForm Called]" << endl;
+	// cout << "[Copy Constructor of ShrubberyCreationForm Called]" << endl;
 }
 
 
@@ -27,7 +27,7 @@ ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src 
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	cout << "[Destructor of ShrubberyCreationForm Called]" << endl;
+	// cout << "[Destructor of ShrubberyCreationForm Called]" << endl;
 }
 
 
@@ -39,6 +39,7 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 {
 	if ( this != &rhs )
 	{
+		AForm::setTarget(rhs.getTarget());
 		AForm::setName(rhs.getName());
 		AForm::setGradeToSign(rhs.getGradeToSign());
 		AForm::setGradeToExecute(rhs.getGradeToExecute());

@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:24:37 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/17 15:52:35 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/17 17:06:20 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,51 @@
 #include "./include/AForm.hpp"
 #include "./include/ShrubberyCreationForm.hpp"
 #include "./include/RobotomyRequestForm.hpp"
-// #include "./include/PresidentialPardonForm.hpp"
+#include "./include/PresidentialPardonForm.hpp"
 
 using std::string;
 using std::cout;
 using std::endl;
 
 int main(void) {
-	// ShrubberyCreationForm tree("Tree Form");
-	// RobotomyRequestForm robot("Robot Form");
-	RobotomyRequestForm robot("Robotomy Form", "bob");
-	Bureaucrat Johnny("Johnny", 45);
-	Johnny.signForm(robot);
-	Johnny.executeForm(robot);
-	// cout << president << endl;
-	// Johnny.signForm(FormCreation);
+
+	Bureaucrat Johnny("Johnny", 1);
+	Bureaucrat Toto("Toto", 150);
+	Bureaucrat Tom("Tom", 75);
+
+	PresidentialPardonForm president("Forgive Form", "Tommy");
+	ShrubberyCreationForm tree("Tree Form", "Garden");
+	RobotomyRequestForm robotomy("Robotomy Form", "Bob");
+
+	cout << Johnny << endl;
+	cout << Toto << endl;
+	cout << Tom << endl;
+	cout << endl;
+	cout << president << endl;
+	cout << tree << endl;
+	cout << robotomy << endl;
+	cout << endl;
+
+	// Test 1 - Robotomy Form
+	// Toto.signForm(robotomy);
+	// Toto.executeForm(robotomy);
+	// Johnny.signForm(robotomy);
+	// Toto.executeForm(robotomy);
+	// Johnny.executeForm(robotomy);
+
+	// Test 2 - President Form
+	// Toto.signForm(president);
+	// Toto.executeForm(president);
+	// Johnny.signForm(president);
+	// Toto.executeForm(president);
+	// Johnny.executeForm(president);
+
+	// Test 3 - ShrubberyCreation Form
+	Toto.signForm(tree);
+	Toto.executeForm(tree);
+	Tom.signForm(tree);
+	Toto.executeForm(tree);
+	Tom.executeForm(tree);
+	Tom.executeForm(tree);
+	
 }

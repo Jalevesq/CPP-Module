@@ -6,18 +6,18 @@
 
 RobotomyRequestForm::RobotomyRequestForm(string newName, string newTarget) : AForm(newName, newTarget, 72, 45)
 {
-	cout << "[Parametric Constructor of RobotomyRequestForm Called]" << endl;
+	// cout << "[Parametric Constructor of RobotomyRequestForm Called]" << endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm()
 {
-	cout << "[Default Constructor of RobotomyRequestForm Called]" << endl;
+	// cout << "[Default Constructor of RobotomyRequestForm Called]" << endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
 {
 	*this = src;
-	cout << "[Copy Constructor of RobotomyRequestForm Called]" << endl;
+	// cout << "[Copy Constructor of RobotomyRequestForm Called]" << endl;
 }
 
 
@@ -27,7 +27,7 @@ RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	cout << "[Destructor of RobotomyRequestForm Called]" << endl;
+	// cout << "[Destructor of RobotomyRequestForm Called]" << endl;
 }
 
 
@@ -39,6 +39,7 @@ RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm con
 {
 	if ( this != &rhs )
 	{
+		AForm::setTarget(rhs.getTarget());
 		AForm::setName(rhs.getName());
 		AForm::setGradeToSign(rhs.getGradeToSign());
 		AForm::setGradeToExecute(rhs.getGradeToExecute());

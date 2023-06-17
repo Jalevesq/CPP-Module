@@ -12,17 +12,17 @@ Bureaucrat::Bureaucrat(string newName, int newGrade)
 		throw(Bureaucrat::GradeTooHighException());
 	this->_grade = newGrade;
 	this->_name = newName;
-	cout << "[Default Constrcutor of Bureaucrat]" << endl;
+	// cout << "[Default Constrcutor of Bureaucrat]" << endl;
 }
 
 Bureaucrat::Bureaucrat()
 {
-	cout << "[Default Constrcutor of Bureaucrat]" << endl;
+	// cout << "[Default Constrcutor of Bureaucrat]" << endl;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat & src )
 {
-	cout << "[Copy Constrcutor of Bureaucrat]" << endl;
+	// cout << "[Copy Constrcutor of Bureaucrat]" << endl;
 	*this = src;
 }
 
@@ -33,7 +33,7 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src )
 
 Bureaucrat::~Bureaucrat()
 {
-	cout << "[Destructor of Bureaucrat]" << endl;
+	// cout << "[Destructor of Bureaucrat]" << endl;
 }
 
 
@@ -76,8 +76,14 @@ void Bureaucrat::decrementGrade() {
 
 void Bureaucrat::signForm(AForm &form) {
 	try {
-		form.beSigned(*this);
-		cout << this->_name << " signed " << form.getName() << endl;
+		if (form.getIsSigned() == true) {
+			form.beSigned(*this);
+			cout << "The "<< form.getName() << " is already signed but " << this->_name << " signs it anyway" << endl;
+		}
+		else {
+			form.beSigned(*this);
+			cout << this->_name << " signed " << form.getName() << endl;
+		}
 	} catch (Bureaucrat::GradeTooLowException& e) {
 		cout << this->_name << " couldn't sign " << form.getName() << " because: " << e.what() << endl;
 	}
@@ -85,10 +91,10 @@ void Bureaucrat::signForm(AForm &form) {
 
 void Bureaucrat::executeForm(AForm const & form) {
 	try {
-		if (form.getIsSigned() == false)
-			throw(AForm::FormNotSignException());
-		else if (form.getGradeToExecute() < _grade)
+		if (form.getGradeToExecute() < _grade)
 			throw(Bureaucrat::GradeTooLowException());
+		else if (form.getIsSigned() == false)
+			throw(AForm::FormNotSignException());
 		cout << this->_name << " executed " << form.getName() << endl;
 		form.execute(*this);
 	} catch (Bureaucrat::GradeTooLowException& e) {

@@ -12,7 +12,7 @@ AForm::AForm()
 	_isSigned = false;
 	_gradeToSign = 150;
 	_gradeToExecute = 150;
-	cout << "[Default Constructor of AForm Called]" << endl;
+	// cout << "[Default Constructor of AForm Called]" << endl;
 }
 
 AForm::AForm(string newName, string newTarget ,int newGradeToSign, int newGradeToExecute) : _target(newTarget), _name(newName) ,_gradeToSign(newGradeToSign), _gradeToExecute(newGradeToExecute)
@@ -22,13 +22,13 @@ AForm::AForm(string newName, string newTarget ,int newGradeToSign, int newGradeT
 		throw (AForm::GradeTooLowException());
 	if (newGradeToSign < 1 || newGradeToExecute < 1)
 		throw (AForm::GradeTooHighException());
-	cout << "[Parametric Constructor of AForm Called]" << endl;
+	// cout << "[Parametric Constructor of AForm Called]" << endl;
 }
 
 AForm::AForm( const AForm & src )
 {
 	*this = src;
-	cout << "[Copy Constructor of AForm Called]" << endl;
+	// cout << "[Copy Constructor of AForm Called]" << endl;
 }
 
 
@@ -38,7 +38,7 @@ AForm::AForm( const AForm & src )
 
 AForm::~AForm()
 {
-	cout << "[Destructor of AForm Called]" << endl;
+	// cout << "[Destructor of AForm Called]" << endl;
 }
 
 
@@ -50,6 +50,7 @@ AForm &				AForm::operator=( AForm const & rhs )
 {
 	if ( this != &rhs )
 	{
+		this->_target = rhs.getTarget();
 		this->_name = rhs.getName();
 		this->_isSigned = rhs.getIsSigned();
 		this->_gradeToSign = rhs.getGradeToSign();
@@ -60,7 +61,7 @@ AForm &				AForm::operator=( AForm const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, AForm const & i )
 {
-	o << "Form Name: " << i.getName() << ", Is Signed: " << i.getIsSigned() << ", Grade to Sign: " << i.getGradeToSign() << ", Grade to Execute: " << i.getGradeToExecute();
+	o << "Form Name: " << i.getName() << ", Target: " << i.getTarget() << ", Is Signed: " << i.getIsSigned() << ", Grade to Sign: " << i.getGradeToSign() << ", Grade to Execute: " << i.getGradeToExecute();
 	return o;
 }
 
