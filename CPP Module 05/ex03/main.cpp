@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:24:37 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/18 10:36:36 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/19 12:52:14 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,4 @@ int main(void) {
 	Johnny.executeForm(*abc);
 	delete abc;
 
-	adult.makeForm("test form", "Bob");
-	
 }
