@@ -6,11 +6,11 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/21 10:02:12 by jalevesq          #+#    #+#              #
-#    Updated: 2023/06/21 10:02:33 by jalevesq         ###   ########.fr        #
+#    Updated: 2023/06/22 13:14:24 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ex00
+NAME	= convert
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 CC = c++
 

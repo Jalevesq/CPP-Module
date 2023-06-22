@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 10:37:21 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/22 11:11:13 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/22 12:59:20 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,10 @@ void printAsDouble(string arg)
 	else
 		cout << CHAR << IMPOSS << endl;
 	// INT PRINT
-	cout << INT << static_cast<int>(new_double) << endl;
+	if (new_double > INT_MAX || new_double < INT_MIN)
+		cout << INT << IMPOSS << endl;
+	else
+		cout << INT << static_cast<int>(new_double) << endl;
 	
 	// FLOAT PRINT
 	cout << FLOAT << std::fixed << std::setprecision(1) << static_cast<float>(new_double) << "f" << endl;
@@ -97,11 +100,35 @@ void printAsFloat(string arg)
 	else
 		cout << CHAR << IMPOSS << endl;
 	// INT PRINT
-	cout << INT << static_cast<int>(new_float) << endl;
+	if (new_float > INT_MAX || new_float < INT_MIN)
+		cout << INT << IMPOSS << endl;
+	else
+		cout << INT << static_cast<int>(new_float) << endl;
 	
 	// FLOAT PRINT
 	cout << FLOAT << std::fixed << std::setprecision(1) << new_float << "f" << endl;
 	
 	// DOUBLE PRINT
 	cout << DOUBLE << std::fixed << std::setprecision(1) << static_cast<double>(new_float) << endl;	
+}
+
+void printAsMath(string arg)
+{
+	cout << CHAR << IMPOSS << endl;
+	cout << INT << IMPOSS << endl;
+	if (arg == "nan" || arg == "nanf")
+	{
+		cout << FLOAT << "nanf" << endl;
+		cout << DOUBLE << "nan" << endl;
+	}
+	else if (arg == "+inf" || arg == "-inf")
+	{
+		cout << FLOAT << arg + "f" << endl;
+		cout << DOUBLE << arg << endl;
+	}
+	else if (arg == "+inff" || arg == "-inff")
+	{
+		cout << FLOAT << arg << endl;
+		cout << DOUBLE << arg.substr(0, arg.length()-1) << endl;
+	}
 }
