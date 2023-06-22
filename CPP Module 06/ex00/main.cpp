@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 10:02:14 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/22 13:00:29 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:48:01 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void printImpossible(string arg)
 	cout << DOUBLE << IMPOSS << endl;
 }
 
+// Faire des checks du input. Que le F de float bien a la fin et seul F, Qu'il y a qu'un seul "." dans le string, etc.
 int main(int ac, char **av)
 {
 	string arg;
