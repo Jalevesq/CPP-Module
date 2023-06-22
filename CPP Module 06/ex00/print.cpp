@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 10:37:21 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/22 12:59:20 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:58:18 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,4 +131,13 @@ void printAsMath(string arg)
 		cout << FLOAT << arg << endl;
 		cout << DOUBLE << arg.substr(0, arg.length()-1) << endl;
 	}
+}
+
+void printImpossible(string arg)
+{
+	(void)arg;
+	cout << CHAR << IMPOSS << endl;
+	cout << INT << IMPOSS << endl;
+	cout << FLOAT << IMPOSS << endl;
+	cout << DOUBLE << IMPOSS << endl;
 }

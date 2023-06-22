@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 10:37:34 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/22 12:59:25 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:58:23 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,4 @@ void printAsInt(string arg);
 void printAsDouble(string arg);
 void printAsFloat(string arg);
 void printAsMath(string arg);
+void printImpossible(string arg);

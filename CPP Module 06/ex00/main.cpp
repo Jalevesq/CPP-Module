@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 10:02:14 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/22 15:48:01 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:39:26 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,32 @@ int getType(string arg)
 	return (-1);
 }
 
-void printImpossible(string arg)
+bool ft_checkstr(string arg)
 {
-	(void)arg;
-	cout << CHAR << IMPOSS << endl;
-	cout << INT << IMPOSS << endl;
-	cout << FLOAT << IMPOSS << endl;
-	cout << DOUBLE << IMPOSS << endl;
+	if (arg == "+inf" || arg == "-inf" || arg == "+inff" || arg == "-inff" || arg == "nan" || arg == "nanf")
+		return (true);
+    std::string::size_type firstIndex = arg.find('f');
+    std::string::size_type secondIndex = arg.find('f', firstIndex + 1);
+
+    if (firstIndex != std::string::npos && secondIndex != std::string::npos) {
+        std::cout << "Problem with 'f', is it a float? Example of use: 2.0f" << std::endl;
+        return false;
+    }
+	firstIndex = arg.find('.');
+	secondIndex = arg.find('.', firstIndex + 1);
+	if (firstIndex != string::npos && secondIndex != string::npos)
+	{
+		cout << "Problem with '.', is it a float/double? Example of use: 2.0f or 2.0" << endl; 
+		return (false);
+	}
+	return (true);
 }
 
 // Faire des checks du input. Que le F de float bien a la fin et seul F, Qu'il y a qu'un seul "." dans le string, etc.
 int main(int ac, char **av)
 {
 	string arg;
+
 	if (ac != 2)
 	{
 		cerr << "Error" << endl
@@ -77,6 +90,8 @@ int main(int ac, char **av)
 		return (1);
 	}
 	arg = av[1];
+	if (ft_checkstr(arg) == false)
+		return (1);
 	switch (getType(arg))
 	{
 	case 0:
