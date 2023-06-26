@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:28:31 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/26 09:11:26 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/26 09:59:09 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,6 @@ class Array {
 			for (unsigned int i = 0; i < _size; i++)
 				_array[i] = n;
 		};
-		// T& getArrayIndex(unsigned int n) const  {
-		// 	return (this->_array[n]);
-		// }
 		void printArray() {
 			for (unsigned int i = 0; i < _size; i++)
 				cout << _array[i] << endl;
