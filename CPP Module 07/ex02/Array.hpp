@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:28:31 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/24 12:36:22 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/26 09:11:26 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,15 @@ using std::endl;
 template<typename T>
 class Array {
 	public:
-		Array() { _array = nullptr; }
+		Array() { _array = new T[0]; this->_size = 0; }
 		Array(unsigned int n) : _size(n) {
 			_array = new T[n];
 		}
 		Array(const Array& src) {
-			this->_size = src.size();
-			this->_array = new T[this->_size];
-			for (unsigned int i = 0; i < this->_size; i++)
-				this->_array[i] = src.getArrayIndex(i);
+			*this = src;
 		};
 		~Array() {
-			if (this->_array != nullptr)
-					delete[] this->_array;
+			delete[] this->_array;
 		}
 		Array &		operator=( Array const & rhs ) {
 			if (this != &rhs)
@@ -42,18 +38,28 @@ class Array {
 					delete[] this->_array;
 				this->_array = new T[this->_size];
 				for (unsigned int i = 0; i < this->_size; i++)
-					this->_array[i] = rhs.getArrayIndex(i);
+					this->_array[i] = rhs[i];
 			}
 			return (*this);
 		};
-
+		T& operator[](unsigned int index) const {
+			if (index >= _size)
+				throw (OutOfBoundsException());
+			return (this->_array[index]);
+		}
+		class OutOfBoundsException : public std::exception {
+		public:
+			virtual const char* what() const throw() {
+				return "Index is OutOfBounds";
+			}
+		};
 		void setArray(T n) {
 			for (unsigned int i = 0; i < _size; i++)
 				_array[i] = n;
 		};
-		T& getArrayIndex(unsigned int n) const  {
-			return (this->_array[n]);
-		}
+		// T& getArrayIndex(unsigned int n) const  {
+		// 	return (this->_array[n]);
+		// }
 		void printArray() {
 			for (unsigned int i = 0; i < _size; i++)
 				cout << _array[i] << endl;

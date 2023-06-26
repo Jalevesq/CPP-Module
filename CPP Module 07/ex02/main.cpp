@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:28:01 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/24 12:58:39 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/26 09:58:13 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
 	// test.setArray(10);
 	// Array<int> test2(test);
 	// test.setArray(20);
-	
+
 	// test.printArray();
 	// test2.printArray();
 	
@@ -47,4 +47,15 @@ int main(void)
 	// Array<string> test5(10);
 	// test5.setArray("coucou");
 	// test5.printArray();
+
+	// Test 4
+	// Array<double> test6(5);
+	// test6.setArray(4.234);
+	// cout << test6[2] << endl;
+	// try {
+	// 	cout << test6[5] << endl;
+	// } catch (std::exception& e)
+	// {
+	// 	cout << e.what() << endl;
+	// }
 }
