@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:28:31 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/26 09:59:09 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/26 10:28:35 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class Array {
 			if (this != &rhs)
 			{
 				this->_size = rhs.size();
-				if (this->_array != nullptr)
-					delete[] this->_array;
+				// if (this->_array != nullptr)
+				// 	delete[] this->_array;
 				this->_array = new T[this->_size];
 				for (unsigned int i = 0; i < this->_size; i++)
 					this->_array[i] = rhs[i];

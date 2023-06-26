@@ -6,56 +6,60 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 11:28:01 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/06/26 09:58:13 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/06/26 10:28:33 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Array.hpp"
-int main(void)
+
+#define MAX_VAL 750
+int main(int, char**)
 {
-	// Test 1
-	// Array<int> test(5);
-	// test.setArray(10);
-	// Array<int> test2(test);
-	// test.setArray(20);
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
 
-	// test.printArray();
-	// test2.printArray();
-	
-	// Test 2
-	// Array<float> test3;
-	// Array<float> test4(10);
-	// test4.setArray(3.34f);
-	
-	// test3 = test4;
-	// cout << "test 3" << endl;
-	// test3.printArray();
-	// cout << endl;
-	// cout << "test 4" << endl;
-	// test4.printArray();
-	
-	// cout << endl << "set array de test 4 a 19.23f" << endl << endl;
-	
-	// test4.setArray(19.23f);
-	// cout << "test 3" << endl;
-	// test3.printArray();
-	// cout << endl;
-	// cout << "test 4" << endl;
-	// test4.printArray();
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
-	// Test 3
-	// Array<string> test5(10);
-	// test5.setArray("coucou");
-	// test5.printArray();
-
-	// Test 4
-	// Array<double> test6(5);
-	// test6.setArray(4.234);
-	// cout << test6[2] << endl;
-	// try {
-	// 	cout << test6[5] << endl;
-	// } catch (std::exception& e)
-	// {
-	// 	cout << e.what() << endl;
-	// }
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;//
+    return 0;
 }
