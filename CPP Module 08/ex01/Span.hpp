@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/26 13:26:23 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/07/11 11:17:57 by jalevesq         ###   ########.fr       */
+/*   Created: 2023/07/10 18:24:16 by jalevesq          #+#    #+#             */
+/*   Updated: 2023/07/11 19:19:28 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include <iostream>
-#include <algorithm>
 #include <vector>
+#include <algorithm>
 
 using std::endl;
 using std::cout;
@@ -22,14 +21,20 @@ using std::string;
 using std::vector;
 using std::cerr;
 
-template<typename T>
-int	easyfind(std::vector<T> param1, int find) {
-	if (sizeof(int) != sizeof(T))
-		throw std::logic_error("Type mismatch");
-	// Typename est obligé à cause du <T> sinon ça ne compile pas. Le typename permet au compilateur de comprendre que c'est bel et bien une variable et non autre chose.
-	typename vector<T>::iterator iter;
-	for (iter = param1.begin(); iter != param1.end(); iter++)
-		if (*iter == find)
-			return (find);
-	throw std::runtime_error("Element not found");
-}
+class Span {
+    public:
+    Span(unsigned int range);
+    ~Span();
+    void    addNumber(int numberToAdd);
+    void    printList();
+    unsigned int shortestSpan();
+    unsigned int longestSpan();
+
+    std::vector<int> copy_n_sort_vector();
+    
+    private:
+    Span();
+    const unsigned int _listSize;
+    unsigned int _listCounter;
+    std::vector<int> _list;
+};
