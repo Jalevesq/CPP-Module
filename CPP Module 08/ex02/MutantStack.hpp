@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 13:13:19 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/07/12 15:15:03 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/07/12 15:33:47 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 
     MutantStack( const MutantStack& rhs ) { *this = rhs; }
     MutantStack&    operator=( const MutantStack& rhs ) {
-        std::stack< T>::operator=( rhs );
+        std::stack<T>::operator=( rhs );
         return *this;
     }
 
