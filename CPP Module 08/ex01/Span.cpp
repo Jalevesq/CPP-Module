@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:29 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/07/12 12:22:01 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/07/12 15:43:46 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,19 @@ Span::Span(unsigned int range) : _listSize(range) {
    this->_listCounter = 0;
 }
 
+Span::Span(const Span& other) : _listSize(other._listSize), _listCounter(other._listCounter), _list(other._list) {}
+
 Span::~Span() {
     // cout << "Destructor of Span Called" << endl;
+}
+
+Span& Span::operator=(const Span& other) {
+    if (this != &other) {
+        _listSize = other._listSize;
+        _listCounter = other._listCounter;
+        _list = other._list;
+    }
+    return *this;
 }
 
 void	Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end) {
