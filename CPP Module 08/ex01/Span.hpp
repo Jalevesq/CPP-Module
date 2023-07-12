@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:24:16 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/07/11 19:19:28 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/07/12 12:19:05 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Span {
     Span(unsigned int range);
     ~Span();
     void    addNumber(int numberToAdd);
+	void	addRange(std::vector<int>::iterator start, std::vector<int>::iterator end);
     void    printList();
     unsigned int shortestSpan();
     unsigned int longestSpan();
