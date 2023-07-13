@@ -1,0 +1,6 @@
+- Fucking exercice de parsing
+- Trouver quel type de container utiliser *** Ne pourra plus etre utiliser dans les autres exercices.
+-- Je vais itérer à travers du début a la fin au fur et à mesure une seule fois OU je vais itérer du début a la fin deux fois.
+- Un type de container mais 2 variable de ce type. Un pour mettre data.csv et un autre pour mettre input.txt ?
+- Parser au fur et a mesure le fichier input (ligne par ligne) ou remplir et vérifier a la fin ? (Si erreur dans une ligne: doit continuer mais signaler l'erreur)
+- 
