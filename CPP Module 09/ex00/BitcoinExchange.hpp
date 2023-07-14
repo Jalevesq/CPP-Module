@@ -6,8 +6,6 @@
 # include <string>
 # include <map>
 
-
-
 using std::string;
 using std::cout;
 using std::endl;
@@ -20,8 +18,8 @@ class BitcoinExchange
 		BitcoinExchange();
 		BitcoinExchange( BitcoinExchange const & src );
 		~BitcoinExchange();
-		BitcoinExchange &		operator=( BitcoinExchange const & rhs );
 		// Create method to convert the input file. Parse input file inside of it or in the main?
+		BitcoinExchange &		operator=( BitcoinExchange const & rhs );
 
 	private:
 		std::map<string, float> _csv_db;
