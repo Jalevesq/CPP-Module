@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:56:50 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/07/14 15:00:42 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/07/14 23:07:39 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ using std::endl;
 using std::cerr;
 
 
-bool does_db_exist(char *input) {
+bool does_input_exist(char *input) {
 	string sInput(input);
 
 	if (sInput == INPUT_FILENAME) {
@@ -48,15 +48,14 @@ int main(int ac, char **av) {
 		cerr << "Not good amount of argument: ./btc input.txt" << endl;
 		return (1);
 	}
-	if (!does_db_exist(av[1]))
+	if (!does_input_exist(av[1]))
 		return (1);
 
 	try {
 		BitcoinExchange convert;
-		
+		convert.convertWithInput(av[1]);
 	} catch (std::exception &e) {
 		cout << "Error: " << e.what() << endl;
 		return (1);
-	}
-	
+	}	
 }

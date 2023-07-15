@@ -5,6 +5,8 @@
 # include <iostream>
 # include <string>
 # include <map>
+# include <sstream>
+#include <ctime>
 
 using std::string;
 using std::cout;
@@ -20,9 +22,11 @@ class BitcoinExchange
 		~BitcoinExchange();
 		// Create method to convert the input file. Parse input file inside of it or in the main?
 		BitcoinExchange &		operator=( BitcoinExchange const & rhs );
+		void printDatabase();
+		void convertWithInput(string inputFilename);
 
 	private:
-		std::map<string, float> _csv_db;
+		std::map<string, float> _bitcoinExchangeDB;
 
 };
 
