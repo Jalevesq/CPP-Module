@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:56:50 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/07/14 23:07:39 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:42:03 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ int main(int ac, char **av) {
 		return (1);
 	}
 	if (!does_input_exist(av[1]))
-		return (1);
-
+		return (1); 
 	try {
 		BitcoinExchange convert;
 		convert.convertWithInput(av[1]);
 	} catch (std::exception &e) {
 		cout << "Error: " << e.what() << endl;
 		return (1);
-	}	
+	}
+	return (0);
 }

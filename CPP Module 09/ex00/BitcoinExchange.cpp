@@ -97,7 +97,7 @@ bool isValid(string &date, string &multiplier) {
 
 	while (multiplier[0] == ' ')
 		multiplier = multiplier.substr(1);
-	while (*(date.end() - 1) == ' ')
+	while (!date.empty() && date.back() == ' ')
 		date = date.substr(0, date.length() - 1);
 
 	dotCount = std::count(multiplier.begin(), multiplier.end(), '.');
@@ -124,6 +124,30 @@ bool isValid(string &date, string &multiplier) {
 	return (true);	
 }
 
+void BitcoinExchange::printExchange(const string date, const string &multiplier) {
+	struct std::tm parsedTime;
+	string convertedDate(date);
+
+	while (this->_bitcoinExchangeDB.find(convertedDate) == this->_bitcoinExchangeDB.end()) {
+		strptime(convertedDate.c_str(), "%Y-%m-%d", &parsedTime);
+		parsedTime.tm_mday--;
+		char buffer[11];
+		strftime(buffer, sizeof(buffer), "%Y-%m-%d", &parsedTime);
+		convertedDate = buffer;
+	}
+	float exchangeRate = this->_bitcoinExchangeDB[convertedDate];
+    float result = exchangeRate * std::stof(multiplier);
+
+	std::ostringstream oss;
+    oss << std::fixed << std::setprecision(2) << result;
+    std::string formattedResult = oss.str();
+
+    if (!formattedResult.empty() && formattedResult.back() == '0') {
+        formattedResult.pop_back();
+    }
+    cout << date << " => " << multiplier << " = " << formattedResult << endl;
+}
+
 void BitcoinExchange::convertWithInput(string inputFilename) {
 	string line, date, multiplier;
 	std::ifstream fs(inputFilename);
@@ -141,8 +165,7 @@ void BitcoinExchange::convertWithInput(string inputFilename) {
 		if (!isValid(date, multiplier))
 			continue;
 		else
-			cout << date << " => " << multiplier << " = " << endl;
-		// Create the function that will multiply and print in the else.
+			BitcoinExchange::printExchange(date, multiplier);
 	}
 
 	fs.close();

@@ -26,6 +26,7 @@ class BitcoinExchange
 		void convertWithInput(string inputFilename);
 
 	private:
+		void printExchange(const string date, const string &multiplier);
 		std::map<string, float> _bitcoinExchangeDB;
 
 };
