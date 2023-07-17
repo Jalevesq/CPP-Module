@@ -10,7 +10,7 @@ class PmergeMe
 	public:
 
 		PmergeMe();
-		// PmergeMe( PmergeMe const & src );
+		PmergeMe( PmergeMe const & src );
 		~PmergeMe();
 
 		// PmergeMe &		operator=( PmergeMe const & rhs );
