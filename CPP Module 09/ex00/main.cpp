@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:56:50 by jalevesq          #+#    #+#             */
-/*   Updated: 2023/07/15 13:42:03 by jalevesq         ###   ########.fr       */
+/*   Updated: 2023/07/18 16:08:37 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 # include <string>
 # include <map>
 
-// The name the input file MUST have.
-#define INPUT_FILENAME "input.txt"
-
 using std::string;
 using std::cout;
 using std::endl;
@@ -29,18 +26,14 @@ using std::cerr;
 bool does_input_exist(char *input) {
 	string sInput(input);
 
-	if (sInput == INPUT_FILENAME) {
-		std::ifstream file(sInput);
-		if (!file.good()) {
-			cerr << "Can't open input (" << INPUT_FILENAME << ") database." << endl;
-			return (false);	
-		}
-		file.close();
-		return (true);
-	} else {
-		cerr << "Input filename is not " << INPUT_FILENAME << "."<< endl;
-		return (false);
+	std::ifstream file(sInput);
+	if (!file.good()) {
+		cerr << "Can't open input (" << sInput << ") database." << endl;
+		return (false);	
 	}
+	file.close();
+	return (true);
+
 }
 
 int main(int ac, char **av) {

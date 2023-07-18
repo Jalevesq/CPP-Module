@@ -63,6 +63,10 @@ bool isValid(string arg) {
 void RPN::makeCalcul(int nbr[2], string arg) {
 	char operation = arg.at(0);
 	int result;
+	if (nbr[0] == 0 && operation == '/') {
+		cerr << "Error: " << "division by 0:  " << nbr[1] << " / " << nbr[0] << endl;
+		exit(EXIT_FAILURE);
+	}
 	switch (operation) {
 		case '/':
 		result = nbr[1] / nbr[0];
@@ -108,11 +112,16 @@ void RPN::calculate() {
 	std::istringstream iss(this->_RPN);
 	while (getline(iss, arg, ' ')) {
 		if (!isValid(arg)) {
-			cout << "Error: '" << arg << "' is not a valid argument";
+			cerr << "Error: '" << arg << "' is not a valid argument" << endl;
 			return ;
 		} else if (!iterateRPN(arg)) {
-			cout << "Error: " << this->_RPN << " is not a valid RPN";
+			cerr << "Error: " << this->_RPN << " is not a valid RPN" << endl;
+			return ;
 		}
+	}
+	if (this->_container.size() > 1) {
+		cerr << "Error: " << this->_RPN << " is not a valid RPN" << endl;
+		return;
 	}
 	cout << "The result is " << this->_container.top() << endl;
 }

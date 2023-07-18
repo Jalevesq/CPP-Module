@@ -128,6 +128,8 @@ void BitcoinExchange::printExchange(const string date, const string &multiplier)
 	struct std::tm parsedTime;
 	string convertedDate(date);
 
+	// Ne fonctionne pas quand dans le input il y a une date avant le data
+	// A refaire? comprend rien du code
 	while (this->_bitcoinExchangeDB.find(convertedDate) == this->_bitcoinExchangeDB.end()) {
 		strptime(convertedDate.c_str(), "%Y-%m-%d", &parsedTime);
 		parsedTime.tm_mday--;
