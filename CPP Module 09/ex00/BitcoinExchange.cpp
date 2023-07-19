@@ -38,6 +38,8 @@ BitcoinExchange::BitcoinExchange()
 	}
 
 	std::getline(file, line);
+	if (line.empty())
+		throw std::runtime_error("Database (data.csv) is empty");
 	if ("date,exchange_rate" != line)
 		throw std::runtime_error("Database (data.csv) does not start with header: date,exchange_rate");
 	while (std::getline(file, line)) {
@@ -48,6 +50,11 @@ BitcoinExchange::BitcoinExchange()
 		}
 	}
 	file.close();
+	if (this->_bitcoinExchangeDB.empty()) {
+		throw(std::runtime_error("data.csv does not contain any data"));
+	}
+	std::map<string,float>::iterator it = this->_bitcoinExchangeDB.begin();
+	this->_oldestDate = it->first;
 }
 
 BitcoinExchange::BitcoinExchange( const BitcoinExchange & src )
@@ -90,15 +97,15 @@ BitcoinExchange &				BitcoinExchange::operator=( BitcoinExchange const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-bool isValid(string &date, string &multiplier) {
-	int dotCount = 0;
-	int dashCount = 0;
+bool BitcoinExchange::isValid(string &date, string &multiplier) {
+	int dotCount = 0, dashCount = 0;
 	struct std::tm parsedTime;
 
+	// Trim space in multiplier and date
 	while (multiplier[0] == ' ')
 		multiplier = multiplier.substr(1);
 	while (!date.empty() && date.back() == ' ')
-		date = date.substr(0, date.length() - 1);
+		date.pop_back();
 
 	dotCount = std::count(multiplier.begin(), multiplier.end(), '.');
 	dashCount = std::count(multiplier.begin(), multiplier.end(), '-');
@@ -116,23 +123,56 @@ bool isValid(string &date, string &multiplier) {
 		return (false);
 	}
 	try {
-		std::stoi(multiplier);
+		int multi = std::stoi(multiplier);
+		if (multi > 1000) {
+			cout << "Error: multiplier is too big (> 1000) => " << multiplier << endl;
+			return (false);
+		} else if (multi < 0) {
+			cout << "Error: multiplier is too small (< 0) => " << multiplier << endl;
+			return (false);
+		}
 	} catch (std::out_of_range &e) {
-		cout << "Error: multiplier is bigger than int max (2147483647) => " << multiplier << endl;
+		cout << "Error: can't convert multipier to int => " << multiplier << endl;
 		return (false);
 	}
-	return (true);	
+
+	// Check if it's a date older than what the database contain.
+  	std::tm date1, date2;
+    std::istringstream dateStream1(this->_oldestDate);
+    std::istringstream dateStream2(date);
+
+    dateStream1 >> std::get_time(&date1, "%Y-%m-%d");
+    dateStream2 >> std::get_time(&date2, "%Y-%m-%d");
+
+    std::time_t date1_time = std::mktime(&date1);
+    std::time_t date2_time = std::mktime(&date2);
+
+    if (date1_time > date2_time) {
+        cout << "Error: there is no data available prior to (or on) => " << date << std::endl;
+		return (false);
+    }
+ 	return (true);	
 }
 
 void BitcoinExchange::printExchange(const string date, const string &multiplier) {
 	struct std::tm parsedTime;
 	string convertedDate(date);
 
-	// Ne fonctionne pas quand dans le input il y a une date avant le data
-	// A refaire? comprend rien du code
 	while (this->_bitcoinExchangeDB.find(convertedDate) == this->_bitcoinExchangeDB.end()) {
 		strptime(convertedDate.c_str(), "%Y-%m-%d", &parsedTime);
-		parsedTime.tm_mday--;
+		if (parsedTime.tm_mday > 0)
+			parsedTime.tm_mday--;
+		else if (parsedTime.tm_mon + 1 > 1) {
+			parsedTime.tm_mday = 31;
+			parsedTime.tm_mon -= 1;
+		} else if (parsedTime.tm_year + 1900 > 2008) {
+			parsedTime.tm_mday = 31;
+			parsedTime.tm_mon = 11;
+			parsedTime.tm_year -= 1;
+		} else {
+			cout << "Error: Bitcoin was not created at this date." << endl; 
+			return ;
+		}
 		char buffer[11];
 		strftime(buffer, sizeof(buffer), "%Y-%m-%d", &parsedTime);
 		convertedDate = buffer;
@@ -169,7 +209,6 @@ void BitcoinExchange::convertWithInput(string inputFilename) {
 		else
 			BitcoinExchange::printExchange(date, multiplier);
 	}
-
 	fs.close();
 }
 

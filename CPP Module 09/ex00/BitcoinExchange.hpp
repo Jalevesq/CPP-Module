@@ -26,9 +26,10 @@ class BitcoinExchange
 		void convertWithInput(string inputFilename);
 
 	private:
+		bool isValid(string &date, string &multiplier);
 		void printExchange(const string date, const string &multiplier);
 		std::map<string, float> _bitcoinExchangeDB;
-
+		string _oldestDate;
 };
 
 // std::ostream &			operator<<( std::ostream & o, BitcoinExchange const & i );
