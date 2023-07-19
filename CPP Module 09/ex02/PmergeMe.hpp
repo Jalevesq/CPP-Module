@@ -25,6 +25,8 @@ class PmergeMe
 		// PmergeMe &		operator=( PmergeMe const & rhs );
 
 	private:
+		void RecursiveSortHighestPairVector(std::vector<int> &aLarge);
+		void InsertionSortLowestPairVector(std::vector<int> &bLittle);
 		// uint_64_t timeSortVector;
 		// uint_64_t timeSortOtherContainer;
 		PmergeMe();
