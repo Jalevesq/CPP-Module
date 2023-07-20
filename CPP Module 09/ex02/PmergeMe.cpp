@@ -1,18 +1,14 @@
 #include "PmergeMe.hpp"
 #include <unistd.h>
 void displayVector(std::vector<int> vec) {
-	// std::vector<int>::iterator it;
+	std::vector<int>::iterator it;
 
-	// for (it = vec.begin(); it < vec.end(); it++) {
-	// 	cout << *it << endl;
-	// }
-
-	for (unsigned int i = 0; i < vec.size(); i++) {
-		if (i % 2 == 0 && i != 0)
-			cout << endl;
-		cout << vec.at(i) << " ";
+	for (it = vec.begin(); it < vec.end(); it++) {
+		cout << *it << " ";
 	}
 	cout << endl;
+
+
 }
 
 
@@ -147,35 +143,25 @@ void PmergeMe::recursiveSortPairVector(std::vector< std::pair<int, int> > &pairV
 	insertElementVector(pairVector, pairVector[n], n - 1);
 }
 
-void PmergeMe::insertPendElementVector(std::vector< std::pair<int, int> > &pairVector) {
- 	// std::vector< std::pair<int, int> >::iterator itPair = pairVector.begin();
-    // std::vector<int>::iterator itVec = _vector.begin();
-	//  while (itPair != pairVector.end() && itVec != _vector.end()) {
-    //     if (itPair->first <= itPair->second) {
-    //         _vector.insert(itVec, itPair->first);
-    //         _vector.insert(itVec + 1, itPair->second);
-    //     } else {
-    //         _vector.insert(itVec, itPair->second);
-    //         _vector.insert(itVec + 1, itPair->first);
-    //     }
-    //     itPair++;
-    //     itVec += 2;
-    // }
+void PmergeMe::insertPendElementVector(std::vector<std::pair<int, int> >& pairVector) {
+    std::vector<std::pair<int, int> >::iterator itPair = pairVector.begin();
+    std::vector<int> pending;
 
-    // while (itPair != pairVector.end()) {
-    //     _vector.push_back(itPair->first);
-    //     _vector.push_back(itPair->second);
-    //     itPair++;
-    // }
+    for (; itPair != pairVector.end(); itPair++) {
+        pending.push_back(itPair->first);
+        this->_vector.push_back(itPair->second);
+    }
+
+    std::vector<int>::iterator it = pending.begin();
+    std::vector<int>::iterator itt;
+    for (; it != pending.end(); it++) {
+        // Find the correct position to insert the element in _unsortedVector using lower_bound
+        itt = std::lower_bound(this->_vector.begin(), this->_vector.end(), *it);
+
+        // Insert the element into _unsortedVector
+        this->_vector.insert(itt, *it);
+    }
 }
-
-// void PmergeMe::insertLastNumber(int number) {
-// 	std::vector<int>::iterator itPair = _vector.begin();
-// 	for (; itPair != _vector.end(); itPair++) {
-// 		if (number >)
-// 	}
-
-// }
 
 void PmergeMe::sortVector() {
 	int lastNumber;
@@ -203,7 +189,7 @@ void PmergeMe::sortVector() {
 void PmergeMe::sort() {
 	sortVector();
 	// sortOtherContainer;
-	display();
+	// display();
 }
 
 /*
