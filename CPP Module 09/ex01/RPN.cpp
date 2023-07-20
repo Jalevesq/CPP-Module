@@ -120,7 +120,7 @@ void RPN::calculate() {
 		}
 	}
 	if (this->_container.size() > 1) {
-		cerr << "Error: " << this->_RPN << " is not a valid RPN" << endl;
+		cerr << "Error: " << this->_RPN << " is not a valid RPN. Not enough operator." << endl;
 		return;
 	}
 	cout << "The result is " << this->_container.top() << endl;
