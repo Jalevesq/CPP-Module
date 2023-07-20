@@ -25,13 +25,20 @@ class PmergeMe
 		// PmergeMe &		operator=( PmergeMe const & rhs );
 
 	private:
-		void RecursiveSortHighestPairVector(std::vector<int> &aLarge);
-		void InsertionSortLowestPairVector(std::vector<int> &bLittle);
+		//Function for vector algorithm
+		std::vector<std::pair<int, int> > definePair();
+		void sortEachPairVector(std::vector<std::pair<int, int> > &pairVector);
+		int extractLastNumberVector();
+		void recursiveSortPairVector(std::vector< std::pair<int, int> > &pairVector, int n);
+		void insertElementVector(std::vector< std::pair<int, int> > &pairVector, std::pair<int, int> element, int n );
+		void insertPendElementVector(std::vector< std::pair<int, int> > &pairVector);
+		void insertLastNumber(int lastNumber);
+
 		// uint_64_t timeSortVector;
 		// uint_64_t timeSortOtherContainer;
 		PmergeMe();
 		//std::OtherContainer<int> _otherContainer
-		std::vector<int> _vec;		
+		std::vector<int> _vector;		
 
 };
 
