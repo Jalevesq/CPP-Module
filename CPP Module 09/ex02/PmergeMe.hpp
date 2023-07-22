@@ -4,7 +4,9 @@
 # include <iostream>
 # include <string>
 # include <vector>
+# include <list>
 # include <algorithm>
+# include <ctime>
 using std::cout;
 using std::endl;
 using std::cerr;
@@ -25,19 +27,32 @@ class PmergeMe
 		// PmergeMe &		operator=( PmergeMe const & rhs );
 
 	private:
-		//Function for vector algorithm
-		std::vector<std::pair<int, int> > definePair();
-		void sortEachPairVector(std::vector<std::pair<int, int> > &pairVector);
-		int extractLastNumberVector();
-		void recursiveSortPairVector(std::vector< std::pair<int, int> > &pairVector, int n);
-		void insertElementVector(std::vector< std::pair<int, int> > &pairVector, std::pair<int, int> element, int n );
-		void insertPendElementVector(std::vector< std::pair<int, int> > &pairVector);
-		void insertLastNumber(int lastNumber);
-
-		// uint_64_t timeSortVector;
-		// uint_64_t timeSortOtherContainer;
 		PmergeMe();
-		//std::OtherContainer<int> _otherContainer
+
+		// Function for vector algorithm
+		std::vector<std::pair<int, int> > definePairVector();
+		void	sortEachPairVector(std::vector<std::pair<int, int> > &pairVector);
+		int		extractLastNumberVector();
+		void	recursiveSortPairVector(std::vector< std::pair<int, int> > &pairVector, int n);
+		void	insertElementVector(std::vector< std::pair<int, int> > &pairVector, std::pair<int, int> element, int n );
+		void	insertPendElementVector(std::vector< std::pair<int, int> > &pairVector);
+		void	insertLastNumberVector(int lastNumber);
+
+		// Function for list algorithm
+		void	sortList();
+		int		extractLastNumberList();
+		std::list<std::pair<int, int> > definePairList();
+		void sortEachPairList(std::list<std::pair<int, int> > &pairList);
+		void recursiveSortPairList(std::list< std::pair<int, int> > &pairList, int n);
+		void insertElementList(std::list< std::pair<int, int> > &pairList, std::pair<int, int> element, int n);
+		void insertPendElementList(std::list< std::pair<int, int> >& pairList);
+		void insertLastNumberList(int lastNumber);
+
+
+		// Variable
+		double _timeSortVector;
+		double _timeSortList;
+		std::list<int> _list;
 		std::vector<int> _vector;		
 
 };
