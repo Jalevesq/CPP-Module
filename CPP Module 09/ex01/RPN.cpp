@@ -101,8 +101,13 @@ bool RPN::iterateRPN(string arg) {
 		}
 		makeCalcul(nbr, arg);
 	} else {
-		int integer = std::stoi(arg);
-		this->_container.push(integer);
+		try {
+			int integer = std::stoi(arg);
+			this->_container.push(integer);
+		} catch (std::exception& e) {
+			cout << "Error: can't convert " << arg << "to number." << endl;
+			exit(EXIT_FAILURE);
+		}
 	}
 	return (true);
 }
