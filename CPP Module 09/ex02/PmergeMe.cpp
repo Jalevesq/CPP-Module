@@ -57,9 +57,10 @@ PmergeMe::PmergeMe(char **av) {
 	}
 }
 
-// PmergeMe::PmergeMe( const PmergeMe & src )
-// {
-// }
+PmergeMe::PmergeMe( const PmergeMe & src )
+{
+	*this = src;
+}
 
 
 /*
@@ -75,33 +76,19 @@ PmergeMe::~PmergeMe()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// PmergeMe &				PmergeMe::operator=( PmergeMe const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
-
-// std::ostream &			operator<<( std::ostream & o, PmergeMe const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
-
+PmergeMe &				PmergeMe::operator=( PmergeMe const & rhs )
+{
+	if ( this != &rhs )
+	{
+		this->_list = rhs._list;
+		this->_vector = rhs._vector;
+	}
+	return *this;
+}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-
-void PmergeMe::display() {
-	// std::vector<int>::iterator it = this->_vector.begin();
-	// for (; it != this->_vector.end(); it++) {
-	// 	cout << *it << " ";
-	// }
-	// cout << endl;
-}
 
 
 //////////////////////////////////////////
@@ -192,7 +179,6 @@ void PmergeMe::insertPendElementVector(std::vector<std::pair<int, int> >& pairVe
     std::vector<int>::iterator it = pending.begin();
     std::vector<int>::iterator itt;
     for (; it != pending.end(); it++) {
-        // Find the correct position to insert the element in _vector
 		itt = std::lower_bound(_vector.begin(), _vector.end(), *it, compareInt);
         this->_vector.insert(itt, *it);
     }
@@ -337,8 +323,6 @@ void PmergeMe::sortList() {
 void PmergeMe::sort() {
 	clock_t start_time;
 	clock_t end_time;
-
-	// Make a function to check if it is already sorted ?
 
 	cout << "Before: ";
 	displayVector(this->_vector);

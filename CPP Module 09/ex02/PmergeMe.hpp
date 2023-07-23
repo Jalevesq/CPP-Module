@@ -17,16 +17,14 @@ class PmergeMe
 
 	public:
 		PmergeMe(char **av);
-		// PmergeMe( PmergeMe const & src );
+		PmergeMe( PmergeMe const & src );
 		~PmergeMe();
-		void sort();
-		void sortVector();
-		void display();
-		// void sortOtherContainer;
+		PmergeMe &		operator=( PmergeMe const & rhs );
 
-		// PmergeMe &		operator=( PmergeMe const & rhs );
-
+		void	sort();
 	private:
+		void	sortVector();
+		void	sortList();
 		PmergeMe();
 
 		// Function for vector algorithm
@@ -39,7 +37,6 @@ class PmergeMe
 		void	insertLastNumberVector(int lastNumber);
 
 		// Function for list algorithm
-		void	sortList();
 		int		extractLastNumberList();
 		std::list<std::pair<int, int> > definePairList();
 		void sortEachPairList(std::list<std::pair<int, int> > &pairList);
